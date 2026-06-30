@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f4ede1" />
+        <meta name="description" content="The Johnson City Observer — a community stewardship dashboard for Greater Johnson City, Tennessee." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="%PUBLIC_URL%/styles.css" />
+        <title>The Johnson City Observer — Community Stewardship Dashboard</title>
+        <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
+        <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+
+        <main class="page" data-testid="main-page">
+            <!-- ===================== MASTHEAD ===================== -->
+            <header class="masthead" data-testid="masthead">
+                <div class="dateline">
+                    <span>Vol. I · No. 1</span>
+                    <span>Greater Johnson City · East Tennessee</span>
+                    <span id="today-date"></span>
+                </div>
+                <h1 class="title" data-testid="masthead-title">The Johnson City Observer</h1>
+                <p class="subtitle" data-testid="masthead-subtitle">Community Stewardship Dashboard</p>
+                <div class="ornament"></div>
+            </header>
+
+            <nav class="topnav" data-testid="top-nav">
+                <a href="#heritage" data-testid="nav-heritage">Heritage</a>
+                <a href="#culture" data-testid="nav-culture">Culture</a>
+                <a href="#tracker" data-testid="nav-tracker">Meeting Tracker</a>
+                <a href="/data-center.html" class="cta" data-testid="nav-data-center">Data Center Impact Tracker →</a>
+            </nav>
+
+            <!-- ===================== SECTION 1: HERITAGE ===================== -->
+            <section class="section" id="heritage" data-testid="section-heritage">
+                <div class="kicker">Section I</div>
+                <h2>Local Heritage &amp; Architecture</h2>
+
+                <div class="articles">
+                    <article class="article dropcap" data-testid="article-train-station">
+                        <h3>The Downtown Train Station &amp; The Rails</h3>
+                        <p class="byline">A stop on the East Tennessee, Virginia &amp; Georgia line — the spring from which a city rose.</p>
+                        <p>
+                            Long before Johnson City wore its name on a courthouse seal, it was simply a tank — Johnson's Tank — a watering stop placed on the railroad in the 1850s by Henry Johnson, who saw a humble opportunity in a hilltop spring. The town did not begin with an inventor's grand pronouncement or a developer's vision board. It began with a need: locomotives required water, travelers required rest, and the railroad required a reliable place to pause between the coalfields and the lowlands. Around that tank, a depot rose. Around that depot, a community took root.
+                        </p>
+                        <p>
+                            The Train Station and the rails that flow past it are not artifacts behind glass. They are the literal bones of how this place was first stitched together — the original physical connection between farms, mills, families, and markets. Generations of residents found their first jobs sorting freight, repairing track, or running the lunch counter at the depot. The rails delivered Christmas oranges, schoolbooks, soldiers home from war, and the lumber that built the porches we still sit on tonight.
+                        </p>
+                        <p>
+                            To steward Johnson City honestly is to remember that connection and community utility are the truest measures of any new infrastructure — not its glow, its scale, or its press release.
+                        </p>
+                    </article>
+
+                    <article class="article dropcap" data-testid="article-sevier-building">
+                        <h3>The Historic Sevier Building</h3>
+                        <p class="byline">Brick by brick, a monument to permanence on a corner that refuses to forget.</p>
+                        <p>
+                            The Sevier Building stands downtown as a quiet, deliberate sermon in red brick and limestone. Built in the era when storefronts were designed to outlast the men who commissioned them, it carries the proportion, weight, and craftsmanship of a city that believed in finishing what it started. Cornice work, dentil molding, segmental arches above the upper windows — none of it cost-saving, none of it disposable. The building was raised to be inherited, not replaced.
+                        </p>
+                        <p>
+                            Walk past the Sevier Building at dusk, when the streetlights catch the brick, and you can almost feel the contract it makes with the sidewalk: I will still be here when your grandchildren walk this corner. That is what local architectural legacy means. It means buildings that age into dignity rather than depreciation. It means a downtown that earns its place on a postcard not because of novelty but because of endurance.
+                        </p>
+                        <p>
+                            The Sevier Building reminds Johnson City of a principle worth defending: real prosperity puts down roots. It does not ask the town to be rebuilt around it every ten years.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 2: CULTURE ===================== -->
+            <section class="section" id="culture" data-testid="section-culture">
+                <div class="kicker">Section II</div>
+                <h2>Culture &amp; Major Happenings</h2>
+
+                <div class="articles three">
+                    <article class="article" data-testid="article-music">
+                        <h3>Local Music Interests</h3>
+                        <p class="byline">From Carter Family ballads to the back-room bluegrass jam — the sound of these hills.</p>
+                        <p>
+                            East Tennessee has always sung. Long before streaming services and arena tours, music here was something families made on porches and churches lifted from their pews. The Bristol Sessions of 1927, recorded just up the road, are often called the "Big Bang of country music," and Johnson City has never been more than a fiddle's bow away from that legacy.
+                        </p>
+                        <p>
+                            Today, the tradition lives on in honky-tonks, listening rooms, church basements, and independent venues where songwriters still test new verses on small crowds. Bluegrass jams, old-time string bands, Americana songwriters, and the next generation of independent artists all share this scene — proof that authentic culture does not need a billion-dollar industry to keep its tune.
+                        </p>
+                        <p>
+                            Supporting local music is community stewardship. Buy the ticket. Tip the band. Show up on a Tuesday.
+                        </p>
+                    </article>
+
+                    <article class="article" data-testid="article-etsu">
+                        <h3>ETSU Hub</h3>
+                        <p class="byline">East Tennessee State University — the town's living classroom.</p>
+                        <p>
+                            Founded in 1911, East Tennessee State University remains one of the most important institutions in the region — not only as a place of education, but as an engine of medicine, music, public health, and civic life. From the Quillen College of Medicine training rural physicians to the Bluegrass, Old Time &amp; Country Music Studies program preserving Appalachian sound, ETSU's reach extends far beyond its campus borders.
+                        </p>
+                        <p>
+                            The university's research, healthcare partnerships, and outreach programs are interwoven with the daily life of Johnson City: free clinics, community theater, regional archives, civic forums, and student volunteers in every corner of the county. When ETSU thrives, the broader community gains a steady supply of physicians, teachers, public servants, and neighbors with a long-term stake in the place.
+                        </p>
+                        <p>
+                            A stewardship-minded city does not treat its university as a tenant. It treats it as a partner in century-long thinking.
+                        </p>
+                    </article>
+
+                    <article class="article" data-testid="article-news">
+                        <h3>General News</h3>
+                        <p class="byline">Civic updates, growth, and events — no sensationalized crime logs, no gossip.</p>
+                        <p>
+                            This page is intentionally restrained. We do not publish booking photos, anonymous tips, or every misfortune that crosses the police radio. Real news, for a real community, is the news that helps neighbors make better decisions: utility rate hearings, park openings, school board agendas, infrastructure projects, road closures, ribbon cuttings, and the slow steady work of a city in motion.
+                        </p>
+                        <p>
+                            Watch this column for updates on downtown projects, water and electric service notices, public meeting calendars, and the kind of high-level civic information that helps a town stay honest with itself. If a story belongs in a tabloid, you will not find it here. If a story belongs in the historical record of how Johnson City governed itself in this decade, we will print it plainly.
+                        </p>
+                        <p class="muted">Have a civic update worth printing? Email the editor (your local equivalent of a tip box) and mark it "FOR THE RECORD."</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 3: MEETING TRACKER ===================== -->
+            <section class="section" id="tracker" data-testid="section-tracker">
+                <div class="kicker">Section III</div>
+                <h2>Searchable City Commission Meeting Tracker</h2>
+                <p style="max-width: 780px; color: var(--ink-soft);">
+                    A plain-spoken record of recent council and planning commission findings. Type any keyword to search, or click a category to filter instantly. Entries are summaries of public proceedings — full meeting minutes remain the official record.
+                </p>
+
+                <div class="tracker" data-testid="meeting-tracker">
+                    <div class="tools">
+                        <input
+                            type="search"
+                            placeholder="Search findings — e.g. water, easement, annexation…"
+                            data-testid="tracker-search"
+                            aria-label="Search meeting findings"
+                        />
+                        <div class="filters" data-testid="tracker-filters">
+                            <button class="filter-btn active" data-category="All"       data-testid="filter-btn-all">All</button>
+                            <button class="filter-btn"        data-category="Zoning"    data-testid="filter-btn-zoning">Zoning</button>
+                            <button class="filter-btn"        data-category="Utilities" data-testid="filter-btn-utilities">Utilities</button>
+                            <button class="filter-btn"        data-category="Budgets"   data-testid="filter-btn-budgets">Budgets</button>
+                        </div>
+                    </div>
+
+                    <ul class="findings" data-testid="findings-list">
+                        <li class="finding" data-category="Zoning" data-text="text amendment industrial overlay boones creek planning commission traffic groundwater">
+                            <span class="date">Nov 18, 2025</span>
+                            <span class="cat" data-c="Zoning">Zoning</span>
+                            <div class="body">
+                                <h4>Text Amendment for Industrial Overlay District (Draft)</h4>
+                                <p>Planning Commission discussed proposed text amendments to expand the I-2 Heavy Industrial overlay along the Boones Creek corridor. Commissioners requested additional traffic and groundwater studies before any second reading.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Utilities" data-text="brightridge substation capacity load projections west walnut large industrial connect">
+                            <span class="date">Nov 12, 2025</span>
+                            <span class="cat" data-c="Utilities">Utilities</span>
+                            <div class="body">
+                                <h4>BrightRidge Substation Capacity Briefing</h4>
+                                <p>Utility staff presented load projections through 2030. Existing substations in the West Walnut corridor are operating near 78% peak capacity; staff recommended a pre-engineering review for any large industrial new-connect over 25 MW.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Budgets" data-text="mid year budget review sales tax public works deferred maintenance">
+                            <span class="date">Nov 5, 2025</span>
+                            <span class="cat" data-c="Budgets">Budgets</span>
+                            <div class="body">
+                                <h4>FY26 Mid-Year Budget Review</h4>
+                                <p>Commission reviewed mid-year general fund performance. Sales-tax receipts up roughly 4.1% year-over-year. Public works deferred-maintenance backlog flagged at $14.6M.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Zoning" data-text="historic overlay renewal sevier downtown east main brick facade">
+                            <span class="date">Oct 28, 2025</span>
+                            <span class="cat" data-c="Zoning">Zoning</span>
+                            <div class="body">
+                                <h4>Sevier Block Historic Overlay Renewal</h4>
+                                <p>Historic Zoning Commission unanimously recommended renewing the downtown historic overlay protecting brick façades along East Main between Buffalo and Spring Streets.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Utilities" data-text="water sewer cost of service study consultant block rates large withdrawal">
+                            <span class="date">Oct 21, 2025</span>
+                            <span class="cat" data-c="Utilities">Utilities</span>
+                            <div class="body">
+                                <h4>Water &amp; Sewer Cost-of-Service Study</h4>
+                                <p>Consultant briefed Commission on a three-year cost-of-service study. Residential block rates may be restructured if large non-residential withdrawals exceed certified capacity.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Budgets" data-text="parks recreation capital plan winged deer founders park trail lighting">
+                            <span class="date">Oct 14, 2025</span>
+                            <span class="cat" data-c="Budgets">Budgets</span>
+                            <div class="body">
+                                <h4>Parks &amp; Rec Capital Plan Adoption</h4>
+                                <p>Commission approved $3.2M for trail extensions at Winged Deer Park and lighting upgrades at Founders Park. No tax-rate change required.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Zoning" data-text="variance south roan mixed use board zoning appeals setback residential r-3">
+                            <span class="date">Oct 7, 2025</span>
+                            <span class="cat" data-c="Zoning">Zoning</span>
+                            <div class="body">
+                                <h4>Variance Request — South Roan Mixed-Use</h4>
+                                <p>Board of Zoning Appeals deferred a variance request for a 4-story mixed-use building citing setback concerns adjacent to an R-3 residential district.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Utilities" data-text="noise ordinance review industrial hum browns mill low frequency baseline">
+                            <span class="date">Sep 30, 2025</span>
+                            <span class="cat" data-c="Utilities">Utilities</span>
+                            <div class="body">
+                                <h4>Noise Ordinance Review — Industrial Hum</h4>
+                                <p>Staff briefed Commission on resident complaints regarding continuous low-frequency hum near the Browns Mill corridor. Public Works directed to obtain dB(C) baseline readings.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Budgets" data-text="capital improvement plan first reading king springs road founders park library hvac">
+                            <span class="date">Sep 23, 2025</span>
+                            <span class="cat" data-c="Budgets">Budgets</span>
+                            <div class="body">
+                                <h4>FY26 Capital Improvement Plan — First Reading</h4>
+                                <p>First reading of the five-year CIP. Major line items: King Springs Road widening, Founders Park drainage, Public Library HVAC replacement.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Zoning" data-text="annexation east 11e corridor 105 acres developer non disclosure agreement">
+                            <span class="date">Sep 16, 2025</span>
+                            <span class="cat" data-c="Zoning">Zoning</span>
+                            <div class="body">
+                                <h4>Annexation Request — East 11E Corridor (105 acres)</h4>
+                                <p>Commission held first hearing on a 105-acre annexation request near the East 11E corridor. Concerns raised about non-disclosure clauses in the developer agreement.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Utilities" data-text="cooling water withdrawal permit tdec surface water municipal intake letter of concern">
+                            <span class="date">Sep 9, 2025</span>
+                            <span class="cat" data-c="Utilities">Utilities</span>
+                            <div class="body">
+                                <h4>Cooling-Water Withdrawal Permit Notice</h4>
+                                <p>TDEC notice received regarding an out-of-county permit for surface-water withdrawal that may affect downstream municipal intakes. Letter of concern to be drafted.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Budgets" data-text="audited financial statements fy25 external auditor general fund balance policy floor">
+                            <span class="date">Sep 2, 2025</span>
+                            <span class="cat" data-c="Budgets">Budgets</span>
+                            <div class="body">
+                                <h4>Audited Financial Statements — FY25</h4>
+                                <p>External auditor presented a clean opinion. General Fund balance at 36% of operating expenditures — above policy floor of 25%.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Zoning" data-text="downtown train station adaptive reuse clinchfield depot multimodal hub visitor center">
+                            <span class="date">Aug 26, 2025</span>
+                            <span class="cat" data-c="Zoning">Zoning</span>
+                            <div class="body">
+                                <h4>Downtown Train Station Adaptive Reuse Concept</h4>
+                                <p>Commissioners received a concept presentation for adaptive reuse of the historic Clinchfield depot as a multimodal hub and visitor center.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Utilities" data-text="right of way transmission easement inventory gis 161kv tva">
+                            <span class="date">Aug 19, 2025</span>
+                            <span class="cat" data-c="Utilities">Utilities</span>
+                            <div class="body">
+                                <h4>Right-of-Way &amp; Transmission Easement Inventory</h4>
+                                <p>Public Works completed a GIS inventory of existing 161kV transmission easements. Briefing scheduled with TVA representatives in Q1.</p>
+                            </div>
+                        </li>
+                        <li class="finding" data-category="Budgets" data-text="property tax certified rate resolution hold harmless reappraisal">
+                            <span class="date">Aug 12, 2025</span>
+                            <span class="cat" data-c="Budgets">Budgets</span>
+                            <div class="body">
+                                <h4>Property Tax Certified Rate Resolution</h4>
+                                <p>Commission adopted a certified property tax rate held harmless from reappraisal at the prior effective levy.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="no-results" data-testid="no-results" style="display:none;">
+                        No findings match that search. Try a different keyword or category.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== BANNER LINK TO DATA CENTER ===================== -->
+            <aside class="banner" data-testid="banner-data-center">
+                <div>
+                    <h3>Data Center Impact Tracker</h3>
+                    <p>Eleven plain-spoken modules on what hyperscale data centers actually cost a community — electricity, water, sound, air, lawsuits, and biblical stewardship.</p>
+                </div>
+                <a href="/data-center.html" class="arrow" data-testid="banner-arrow" aria-label="Open Data Center Impact Tracker">→</a>
+            </aside>
+
+            <footer class="foot" data-testid="footer">
+                <p>
+                    <strong>The Johnson City Observer</strong> · A community stewardship project ·
+                    Published in the public interest · Greater Johnson City, Tennessee
+                </p>
+                <p>“Make it your ambition to lead a quiet life…” — 1 Thessalonians 4:11</p>
+            </footer>
+        </main>
+
+        <script src="%PUBLIC_URL%/main.js"></script>
+        <script>
+            // Print today's date in the dateline
+            (function () {
+                const el = document.getElementById('today-date');
+                if (!el) return;
+                const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                el.textContent = new Date().toLocaleDateString('en-US', opts);
+            })();
+        </script>
+
+        <a
+            id="emergent-badge"
+            target="_blank"
+            href="https://app.emergent.sh/?utm_source=emergent-badge"
+            style="
+                display: inline-flex !important;
+                box-sizing: border-box;
+                width: 178px;
+                height: 40px;
+                padding: 8px 12px 8px 12px;
+                align-items: center !important;
+                gap: 8px;
+                border-radius: 50px !important;
+                background: #000 !important;
+                position: fixed !important;
+                bottom: 16px;
+                right: 16px;
+                text-decoration: none;
+                font-family: -apple-system, BlinkMacSystemFont,
+                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
+                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
+                    sans-serif !important;
+                font-size: 12px !important;
+                z-index: 9999 !important;
+            "
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M15.5702 8.13142C15.7729 8.0412 16.0007 8.18878 15.9892 8.4103C15.8374 11.3192 14.0965 14.0405 11.2531 15.3065C8.40964 16.5725 5.2224 16.0453 2.95912 14.2117C2.78676 14.072 2.82955 13.804 3.03219 13.7137L4.95677 12.8568C5.04866 12.8159 5.15446 12.823 5.24204 12.8725C6.73377 13.7153 8.59176 13.8649 10.2772 13.1145C11.9626 12.3641 13.0947 10.8833 13.4665 9.21075C13.4883 9.11256 13.5539 9.02918 13.6457 8.98827L15.5702 8.13142Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3066 4.74698L15.5067 5.19653C15.5759 5.35178 15.5061 5.53366 15.3508 5.60278L1.29992 11.8586C1.14467 11.9278 0.962794 11.8579 0.893675 11.7027L0.701732 11.2716L0.693457 11.2531C-1.10317 7.21778 0.711626 2.49007 4.74692 0.693443C8.78221 -1.10318 13.51 0.711693 15.3066 4.74698ZM2.82356 8.55367C2.63552 8.63739 2.41991 8.51617 2.40853 8.31065C2.28373 6.05724 3.53858 3.85787 5.72286 2.88536C7.90715 1.91286 10.3813 2.45199 11.9724 4.05256C12.1175 4.19854 12.0633 4.43988 11.8753 4.5236L2.82356 8.55367Z" fill="white"/>
+            </svg>
+            <p style="color:#FFF !important;font-family:'Inter',sans-serif !important;font-size:13px !important;font-weight:600 !important;line-height:20px !important;margin:0 !important;white-space:nowrap !important;">Made with Emergent</p>
+        </a>
+        <script>
+            !(function (t, e) { var o, n, p, r; e.__SV || ((window.posthog = e), (e._i = []), (e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && ((t = t[o[0]]), (e = o[1])), (t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))); }); } ((p = t.createElement("script")).type = "text/javascript"), (p.crossOrigin = "anonymous"), (p.async = !0), (p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"), (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? (u = e[a] = []) : (a = "posthog"), u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return ("posthog" !== a && (e += "." + a), t || (e += " (stub)"), e); }, u.people.toString = function () { return u.toString(1) + ".people (stub)"; }, o = "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++) g(u, o[n]); e._i.push([i, s, a]); }), (e.__SV = 1)); })(document, window.posthog || []);
+            posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", { api_host: "https://us.i.posthog.com", person_profiles: "identified_only", session_recording: { recordCrossOriginIframes: true, capturePerformance: false } });
+        </script>
+    </body>
+</html>

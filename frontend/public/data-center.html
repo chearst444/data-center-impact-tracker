@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f4ede1" />
+        <meta name="description" content="The Johnson City Observer — Data Center Impact Tracker. Eleven plain-spoken modules on the real cost of hyperscale facilities." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles.css" />
+        <title>Data Center Impact Tracker — The Johnson City Observer</title>
+    </head>
+    <body>
+        <main class="page" data-testid="data-center-page">
+
+            <!-- ===================== MASTHEAD ===================== -->
+            <header class="masthead">
+                <div class="dateline">
+                    <span>Special Section</span>
+                    <span>Stewardship Series · No. 1</span>
+                    <span id="today-date"></span>
+                </div>
+                <h1 class="title" data-testid="dc-title">Data Center Impact Tracker</h1>
+                <p class="subtitle">Eleven modules · One honest accounting · For the people who will pay the bill</p>
+                <div class="ornament"></div>
+            </header>
+
+            <nav class="topnav" data-testid="dc-nav">
+                <a href="/" data-testid="nav-home">← The Observer</a>
+                <a href="#m1">Electric</a>
+                <a href="#m2">Water</a>
+                <a href="#m3">Sound</a>
+                <a href="#m4">Timeline</a>
+                <a href="#m5">Turned Away</a>
+                <a href="#m6">NDAs</a>
+                <a href="#m7">Air</a>
+                <a href="#m8">Lawsuits</a>
+                <a href="#m9">Stranded</a>
+                <a href="#m10">Action</a>
+                <a href="#m11">Scripture</a>
+            </nav>
+
+            <section style="margin-top: 28px; max-width: 820px;">
+                <p style="font-size: 17px; color: var(--ink-soft);">
+                    The Tracker is a non-partisan, plain-spoken accounting of what a hyperscale data center actually costs the community that hosts it — in electricity, in water, in air, in sound, in legal exposure, and in the long, slow obligations that quietly outlive the press conference. The calculators below use industry-typical figures for illustration; they are tools to provoke informed questions, not engineering studies. Use them to prepare for the meetings that will set this town's course.
+                </p>
+            </section>
+
+            <!-- =========== MODULE 1 — ELECTRICAL BURDEN =========== -->
+            <article class="module" id="m1" data-testid="module-1">
+                <div class="num">Module 01</div>
+                <h2>The Electrical Burden &amp; Rate Calculator</h2>
+                <p class="feature">Feature: An interactive map and input calculator showing regional grid strain and infrastructure costs.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> The sharp increase in total baseline electricity consumption immediately following a data center's construction. The cost of high-voltage transmission lines and new substation infrastructure. A visualization showing how peak-demand utility costs are quietly redistributed across residential ratepayers' monthly electric bills.</p>
+                        <p>A single hyperscale campus can request 100 to 500 megawatts of continuous load — a figure roughly equivalent to a mid-sized American city. That load does not appear out of nowhere. It is built — transmission line by transmission line, substation by substation, transformer by transformer — and somebody pays for those poles. When a "rate case" arrives at the public utility commission two or three years later, the cost of those upgrades is recovered. It is recovered, almost without exception, from the people who never asked for the facility in the first place.</p>
+                    </div>
+                    <div class="tool" data-testid="tool-electric">
+                        <h4>Rate Impact Calculator</h4>
+                        <div class="field">
+                            <label>Data center continuous load <span class="val"><span id="dcMW">250</span> MW</span></label>
+                            <input type="range" id="r-dcMW" min="50" max="600" step="10" value="250" data-testid="electric-dc-mw" />
+                        </div>
+                        <div class="field">
+                            <label>Existing service-area peak load <span class="val"><span id="baseMW">900</span> MW</span></label>
+                            <input type="range" id="r-baseMW" min="200" max="2000" step="50" value="900" data-testid="electric-base-mw" />
+                        </div>
+                        <div class="field">
+                            <label>Residential ratepayers in service area <span class="val"><span id="ratepayers">95,000</span></span></label>
+                            <input type="range" id="r-ratepayers" min="10000" max="500000" step="5000" value="95000" data-testid="electric-ratepayers" />
+                        </div>
+                        <div class="readout" data-testid="electric-readout">
+                            <strong id="o-loadPct">27.8%</strong>
+                            increase in service-area baseline electricity load.
+                            <hr style="margin: 10px 0; border-top: 1px dotted var(--rule);" />
+                            <strong id="o-infra">$312M</strong>
+                            estimated new transmission + substation infrastructure cost
+                            <span class="muted">(industry-typical: ≈ $1.25M per MW of new firm capacity)</span>.
+                            <hr style="margin: 10px 0; border-top: 1px dotted var(--rule);" />
+                            <strong id="o-monthly">$13.68 / month</strong>
+                            illustrative redistribution onto a typical residential bill over a 20-year recovery period.
+                        </div>
+                        <p class="muted" style="margin-top: 10px;">Illustrative model. Real cost-allocation depends on rate design, riders, and regulatory order.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 2 — WATER =========== -->
+            <article class="module" id="m2" data-testid="module-2">
+                <div class="num">Module 02</div>
+                <h2>The Water Impact Module</h2>
+                <p class="feature">Feature: A water consumption tracker that visualizes on-site and off-site ecosystem strain.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> Daily evaporative cooling usage (highlighting spikes up to 5+ million gallons a day during summer peak demand). The "indirect water footprint" required by regional power generation facilities to feed the data center's baseline electrical load. A comparison tool showing how data center usage directly competes with local agricultural, residential well, and municipal water tables.</p>
+                        <p>Evaporative cooling — the most common method of keeping servers below thermal failure — works exactly like a giant swamp cooler. Water enters the building cool, evaporates into the air, and leaves the building as humid exhaust. That water is gone. It does not return to the river. On a 100°F July afternoon, a single hyperscale campus can evaporate 4 to 6 million gallons in a single day — more than a small town's entire municipal draw. Behind the meter, there is a second water bill nobody prints: the cooling water required at the regional power plants generating the electricity in the first place.</p>
+                    </div>
+                    <div class="tool" data-testid="tool-water">
+                        <h4>Daily Water Footprint</h4>
+                        <div class="field">
+                            <label>On-site evaporative cooling <span class="val"><span id="evapG">3.2</span>M gal/day</span></label>
+                            <input type="range" id="r-evapG" min="0.2" max="6.0" step="0.1" value="3.2" data-testid="water-evap" />
+                        </div>
+                        <div class="field">
+                            <label>Season<span class="val"><span id="seasonLabel">Summer peak</span></span></label>
+                            <select id="r-season" data-testid="water-season">
+                                <option value="1.6">Summer peak (×1.6)</option>
+                                <option value="1.0" selected>Annual average (×1.0)</option>
+                                <option value="0.7">Winter / shoulder (×0.7)</option>
+                            </select>
+                        </div>
+                        <div class="readout">
+                            <strong id="o-onsite">3.20M gal/day</strong> on-site evaporative loss.
+                            <hr style="margin:10px 0; border-top:1px dotted var(--rule);" />
+                            <strong id="o-indirect">1.50M gal/day</strong>
+                            indirect cooling water at upstream power plants
+                            <span class="muted">(≈ 0.47 gal per kWh, thermoelectric average)</span>.
+                            <hr style="margin:10px 0; border-top:1px dotted var(--rule);" />
+                            <strong id="o-total">4.70M gal/day</strong> total community water footprint.
+                        </div>
+                        <h4 style="margin-top: 18px;">Daily Comparison</h4>
+                        <div class="bars" data-testid="water-bars">
+                            <div class="bar-row"><span>Avg. household</span><div class="bar-track"><div class="bar-fill alt" id="b-house"></div></div><span><span id="v-house">300</span> gal</span></div>
+                            <div class="bar-row"><span>200-acre farm</span><div class="bar-track"><div class="bar-fill alt2" id="b-farm"></div></div><span><span id="v-farm">120K</span> gal</span></div>
+                            <div class="bar-row"><span>Municipal (small town)</span><div class="bar-track"><div class="bar-fill alt" id="b-muni"></div></div><span><span id="v-muni">2.5M</span> gal</span></div>
+                            <div class="bar-row"><span>Data center (total)</span><div class="bar-track"><div class="bar-fill" id="b-dc"></div></div><span><span id="v-dc">4.7M</span> gal</span></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 3 — SOUND =========== -->
+            <article class="module" id="m3" data-testid="module-3">
+                <div class="num">Module 03</div>
+                <h2>The Sound Footprint &amp; Propagation Map</h2>
+                <p class="feature">Feature: An acoustic modeling simulator based on real-world community reports.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> The 24/7 continuous nature of industrial cooling fans and rooftop chillers (no weekend or nighttime shutdowns). A 200-foot propagation zone tool showing how low-frequency noise easily travels past standard zoning buffers, penetrates residential walls, and vibrates inside homes. A public health dashboard detailing the biological stress responses caused by continuous low-frequency hums (sleep disruption, elevated cortisol, anxiety).</p>
+                        <p>Data center sound is not the sound of a factory at lunch break. It is the sound of a factory that never closes. Hundreds of rooftop fans and chillers run continuously — through Christmas Eve, through 3 a.m., through the quiet hour between cricket-song and the first birdcall. Standard zoning buffers were written for daytime industrial neighbors. They do not account for low-frequency noise (the 20–120 Hz hum), which slips through walls the way a candle flame slips through a screen door.</p>
+                    </div>
+                    <div class="tool" data-testid="tool-sound">
+                        <h4>Propagation Simulator</h4>
+                        <div class="field">
+                            <label>Source level at facility fenceline <span class="val"><span id="dB">68</span> dB(A)</span></label>
+                            <input type="range" id="r-dB" min="50" max="90" step="1" value="68" data-testid="sound-db" />
+                        </div>
+                        <div class="field">
+                            <label>Distance to nearest home <span class="val"><span id="dist">200</span> ft</span></label>
+                            <input type="range" id="r-dist" min="50" max="1500" step="10" value="200" data-testid="sound-dist" />
+                        </div>
+                        <svg class="prop-map" viewBox="0 0 400 280" data-testid="sound-svg">
+                            <rect x="0" y="0" width="400" height="280" fill="var(--paper)"/>
+                            <!-- Facility -->
+                            <rect x="40" y="120" width="60" height="40" fill="var(--ink)" />
+                            <text x="70" y="115" text-anchor="middle" font-family="Spectral" font-size="11" fill="var(--ink)">Data Center</text>
+                            <!-- propagation rings -->
+                            <circle cx="100" cy="140" r="60"  fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/>
+                            <circle cx="100" cy="140" r="120" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.4"/>
+                            <circle cx="100" cy="140" r="180" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.3"/>
+                            <text x="160" y="83"  font-family="Spectral" font-size="10" fill="var(--accent)">100 ft</text>
+                            <text x="220" y="38"  font-family="Spectral" font-size="10" fill="var(--accent)">200 ft (typical zoning buffer)</text>
+                            <text x="280" y="0"   font-family="Spectral" font-size="10" fill="var(--accent)">300 ft</text>
+                            <!-- house marker -->
+                            <g id="house" transform="translate(220,140)">
+                                <polygon points="0,-12 14,0 -14,0" fill="var(--ink)"/>
+                                <rect x="-10" y="0" width="20" height="14" fill="var(--ink)"/>
+                                <text x="0" y="28" text-anchor="middle" font-family="Spectral" font-size="10" fill="var(--ink)">Home</text>
+                            </g>
+                        </svg>
+                        <div class="readout">
+                            <strong id="o-atHome">53 dB(A)</strong>
+                            estimated sound at the home
+                            <span class="muted">(inverse-square + 2 dB/100 ft atmospheric loss)</span>.
+                            <hr style="margin:10px 0;border-top:1px dotted var(--rule);" />
+                            <span id="o-health">Above the 45 dB(A) WHO night-time outdoor guideline. Sustained exposure linked to sleep fragmentation, elevated nocturnal cortisol, and increased self-reported anxiety.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 4 — TIMELINE =========== -->
+            <article class="module" id="m4" data-testid="module-4">
+                <div class="num">Module 04</div>
+                <h2>Post-Construction Timeline &amp; "Unknown Issues" Log</h2>
+                <p class="feature">Feature: A chronological timeline tracking how long it takes for unforeseen problems to emerge after the construction phase ends.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p>The press release runs the day the slab is poured. The problems arrive in three waves — and they always arrive in roughly the same order.</p>
+                        <ul class="timeline" data-testid="timeline">
+                            <li>
+                                <div class="phase">Phase 1 — Immediate Sound Footprint</div>
+                                <div class="when">Months 1–6 after commissioning</div>
+                                Immediate emergence of the continuous sound footprint and drop-off in local residential peace. Neighbors begin filing the first noise complaints, often at night, often regarding a low-frequency hum that "you can feel before you hear it." Most municipal noise ordinances are not written for 24/7 industrial drone and prove difficult to enforce.
+                            </li>
+                            <li>
+                                <div class="phase">Phase 2 — Municipal Water Strain</div>
+                                <div class="when">Months 6–18</div>
+                                Unanticipated strains on the local municipal water grid during peak seasonal weather changes. Summer-peak evaporation collides with drought conditions; cooling demand competes with agricultural irrigation, residential wells, and downstream municipal intakes. Emergency water-curtailment ordinances surface in council agendas.
+                            </li>
+                            <li>
+                                <div class="phase">Phase 3 — Quiet Rate Increases</div>
+                                <div class="when">Years 2 and beyond</div>
+                                Rate increases appearing on residential power bills as utilities adjust to long-term grid expansions. Transmission upgrades, new substations, and demand-side riders are recovered through the rate base. The household line item is small per month and enormous per decade.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tool">
+                        <h4>Why the Order Matters</h4>
+                        <p style="font-size:14px;">Communities consistently report these three waves in the same sequence because they map to physical reality: sound is generated the instant the cooling plant is energized; water strain takes one full seasonal cycle to manifest; and rate cases lag by 18–36 months because they require regulatory filings. A town that prepares for all three before signing is a town that holds the pen.</p>
+                        <p class="muted" style="margin-top: 14px;">Use this log to ask your commission: "Which of these three phases is on our agenda — and which is being deferred to a future commission?"</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 5 — TURNED AWAY =========== -->
+            <article class="module" id="m5" data-testid="module-5">
+                <div class="num">Module 05</div>
+                <h2>The "Turned Away" Case Studies Archive</h2>
+                <p class="feature">Feature: A database of municipalities and counties that successfully passed emergency moratoriums or rejected data center proposals.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> The specific reasons for rejection (e.g., failure to provide adequate due diligence, lack of permanent job creation compared to resource usage, threats to rural zoning). The legal and zoning frameworks used by local county commissions to halt the projects.</p>
+                        <p>The municipalities below are illustrative composites drawn from public reporting on moratoria, rejected zoning amendments, and adopted overlay ordinances. They represent the legal vocabulary a small town can borrow. Verify any quoted framework against current local counsel before adopting.</p>
+                    </div>
+                    <div class="tool">
+                        <h4>Sample Frameworks Used</h4>
+                        <ul style="font-size:14px; padding-left:18px;">
+                            <li>Moratorium ordinance with sunset clause (6–18 months) on data-center zoning review.</li>
+                            <li>Special-use permit requirements layered on top of by-right industrial zoning.</li>
+                            <li>Minimum-buffer + sound-budget overlays (1,000–2,500 ft from residential).</li>
+                            <li>Water-availability findings required prior to site plan approval.</li>
+                            <li>Standalone "Data Center District" classification with separate development standards.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-grid" style="margin-top: 24px;" data-testid="case-grid">
+                    <div class="case">
+                        <h5>Peaceful County (Illustrative)</h5>
+                        <div class="meta">Adopted 12-month moratorium · Rural Tier I zoning</div>
+                        <p>Cited failure to provide independent water-availability study and absence of a permanent jobs-to-megawatts ratio in the developer's application packet.</p>
+                    </div>
+                    <div class="case">
+                        <h5>Pinegrove Township (Illustrative)</h5>
+                        <div class="meta">Rejected zoning text amendment · 5–0 vote</div>
+                        <p>Commission cited threats to rural zoning character and the absence of any nighttime sound-budget commitment. Existing agricultural overlay was upheld.</p>
+                    </div>
+                    <div class="case">
+                        <h5>Stoney Branch Borough (Illustrative)</h5>
+                        <div class="meta">Special-use permit denied</div>
+                        <p>Denied on the grounds that diesel generator placement violated the borough's existing air-quality buffer ordinance. Developer offered no mitigation plan.</p>
+                    </div>
+                    <div class="case">
+                        <h5>Three Oaks County (Illustrative)</h5>
+                        <div class="meta">Pre-emptive Data Center District ordinance</div>
+                        <p>Adopted a standalone DCD classification requiring 2,000-ft residential buffer, public-funded acoustic study, and a no-NDA disclosure clause for all developer agreements.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 6 — SECRET DEALS / NDA =========== -->
+            <article class="module" id="m6" data-testid="module-6">
+                <div class="num">Module 06</div>
+                <h2>The "Secret Deals" Transparency &amp; NDA Tracker</h2>
+                <p class="feature">Feature: A civic alert tool that flags the use of Non-Disclosure Agreements (NDAs) by city officials.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> How tech developers frequently use shell companies and strict NDAs for months to hide the true scale, water requirements, and power needs of a project from the public until the day of the vote. A "Right to Know" checklist for citizens to demand full disclosure of developer identities and utility commitments before any land annexation or zoning votes take place.</p>
+                        <p>The signature move of the modern hyperscale playbook is the LLC with a placeholder name. "Project Bluebird." "Olive Branch Holdings." "Riverstone Development." The local economic-development office is bound by NDA for six to nine months. When the project is finally unveiled, the public comment window is often measured in days. By design, the residents who will live with the facility are given the least time to study it.</p>
+                    </div>
+                    <div class="tool">
+                        <h4>"Right to Know" Checklist</h4>
+                        <p class="muted" style="margin-bottom: 8px;">Print, sign, and bring to your next commission meeting.</p>
+                        <ul class="checklist" data-testid="rtk-checklist">
+                            <li><input type="checkbox"/><span>Disclose the actual parent company behind any LLC or shell entity applying for zoning, annexation, or utility service.</span></li>
+                            <li><input type="checkbox"/><span>Publish the projected continuous and peak megawatt load before any rezoning vote.</span></li>
+                            <li><input type="checkbox"/><span>Publish the projected daily and peak water demand, in gallons, with seasonal breakdowns.</span></li>
+                            <li><input type="checkbox"/><span>Disclose all NDAs signed by any city or county official, staff member, or board.</span></li>
+                            <li><input type="checkbox"/><span>Publish all developer-paid economic-impact studies and allow a 60-day public comment window before the vote.</span></li>
+                            <li><input type="checkbox"/><span>Require a written, signed sound-budget commitment with a verifiable nighttime dB(A) cap at the residential property line.</span></li>
+                            <li><input type="checkbox"/><span>Require a written, signed water-curtailment plan with binding drought triggers.</span></li>
+                            <li><input type="checkbox"/><span>Require a written commitment that the developer — not residential ratepayers — bears 100% of dedicated transmission, substation, and water-treatment costs.</span></li>
+                        </ul>
+                        <div class="row" style="margin-top: 14px;">
+                            <button class="btn" data-testid="download-rtk">Download checklist (.txt)</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 7 — AIR QUALITY =========== -->
+            <article class="module" id="m7" data-testid="module-7">
+                <div class="num">Module 07</div>
+                <h2>The Emergency Generator Air Quality Monitor</h2>
+                <p class="feature">Feature: An environmental impact tracker focusing on backup power systems.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> The mapping of thousands of industrial, rail-car-sized diesel backup generators required on-site to keep the servers running during a grid failure. The localized air quality risks and diesel exhaust emissions produced during mandatory weekly testing and emergency run times, which often bypass standard municipal air pollution restrictions.</p>
+                        <p>Each large hyperscale campus typically installs between 30 and 250 industrial diesel generators — engines the size of rail cars. They are tested under load every week, usually for thirty minutes to an hour, often in the early morning. The exhaust contains NOx, fine particulate matter (PM2.5), volatile organic compounds, and CO. Many state air-pollution programs categorize these generators as "emergency" units and exempt them from the limits that would apply to a normal industrial source.</p>
+                    </div>
+                    <div class="tool" data-testid="tool-air">
+                        <h4>Weekly Emissions Estimate</h4>
+                        <div class="field">
+                            <label>On-site diesel generators <span class="val"><span id="gens">120</span> units</span></label>
+                            <input type="range" id="r-gens" min="10" max="300" step="5" value="120" data-testid="air-gens" />
+                        </div>
+                        <div class="field">
+                            <label>Weekly test duration per unit <span class="val"><span id="dur">30</span> min</span></label>
+                            <input type="range" id="r-dur" min="15" max="120" step="5" value="30" data-testid="air-dur" />
+                        </div>
+                        <div class="readout">
+                            <strong id="o-fuel">3,600 gal/week</strong> diesel fuel burned in routine testing alone.
+                            <hr style="margin:10px 0;border-top:1px dotted var(--rule);" />
+                            <strong id="o-nox">≈ 230 lb NOx / week</strong>
+                            <span class="muted">(≈ 0.064 lb/gal Tier-2 large diesel)</span>
+                            <br />
+                            <strong id="o-pm" style="margin-top:6px;">≈ 9 lb PM2.5 / week</strong>
+                            <span class="muted">(≈ 0.0025 lb/gal)</span>
+                        </div>
+                        <p class="muted" style="margin-top: 10px;">Routine testing only. Emergency run-time emissions are additive and uncapped under most "emergency engine" exemptions.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 8 — LAWSUITS =========== -->
+            <article class="module" id="m8" data-testid="module-8">
+                <div class="num">Module 08</div>
+                <h2>The "Bullying Lawsuit" Legal Defense Repository</h2>
+                <p class="feature">Feature: A legal resource database for small-town boards whose "hands are tied" by corporate litigation.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> Case studies of small agricultural or rural townships that voted "No" on data center zoning, only to be immediately slapped with multi-million dollar lawsuits by tech conglomerates to force a settlement. Pro-bono legal templates, ordinance language, and zoning frameworks that small municipalities can use to legally insulate themselves before developers approach the city council.</p>
+                        <p>The conventional wisdom — that a small town's "hands are tied" once a developer files — is half-true and entirely defeatist. The hands are tied <em>after</em> a zoning matrix is left ambiguous. They are not tied before. The single most effective defense is a clear, pre-existing ordinance that defines data centers as a distinct land-use category with specific performance standards. Pass the framework before the application arrives.</p>
+                    </div>
+                    <div class="tool">
+                        <h4>Download — Model Ordinance Language</h4>
+                        <p style="font-size:14px;">A plain-text starter template defining "Hyperscale Data Center" as a distinct use, requiring special-use permit, water-availability finding, sound-budget commitment, and ratepayer-protection clause. Adapt with local counsel.</p>
+                        <div class="row" style="margin-top: 12px;">
+                            <button class="btn" data-testid="download-ordinance">Download model ordinance (.txt)</button>
+                            <button class="btn outline" data-testid="download-rtk-2">Download RTK checklist (.txt)</button>
+                        </div>
+                        <h4 style="margin-top: 22px;">Defensive Drafting Principles</h4>
+                        <ul style="font-size:14px; padding-left:18px;">
+                            <li>Define hyperscale data centers as a distinct use — not "general industrial."</li>
+                            <li>Require special-use permits, not by-right approvals.</li>
+                            <li>Adopt water-availability and sound-budget findings as conditions precedent.</li>
+                            <li>Include a "ratepayer-protection" clause requiring full developer-funded infrastructure.</li>
+                            <li>Bind any tax abatement to permanent local job-creation thresholds, with claw-backs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 9 — STRANDED ASSET =========== -->
+            <article class="module" id="m9" data-testid="module-9">
+                <div class="num">Module 09</div>
+                <h2>The "Stranded Asset" / Digital Blight Risk Model</h2>
+                <p class="feature">Feature: A long-term economic forecasting tool addressing the life expectancy of the facility.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>Data points included.</strong> Projections on how rapidly AI software models and microchips are becoming more efficient, requiring less brute-force hardware over time. The financial risk of the data center becoming an oversized, obsolete "ghost town" within a decade — leaving the community stuck with massive, empty concrete warehouses and stranded infrastructure that cannot be easily repurposed.</p>
+                        <p>The most expensive thing about a data center is not the day it opens. It is the day, ten or fifteen years later, when more efficient silicon and leaner AI models make the original footprint obsolete. Steel-mill towns learned this in the 1980s. Coal towns learned it in the 2000s. The data-center decade may be shorter than either. The question is not "will the facility be obsolete?" but "who is left holding the empty concrete?"</p>
+                    </div>
+                    <div class="tool" data-testid="tool-stranded">
+                        <h4>Obsolescence Risk Model</h4>
+                        <div class="field">
+                            <label>Annual chip efficiency improvement <span class="val"><span id="effPct">35</span> %</span></label>
+                            <input type="range" id="r-effPct" min="10" max="60" step="1" value="35" data-testid="stranded-eff" />
+                        </div>
+                        <div class="field">
+                            <label>Annual AI model efficiency gain <span class="val"><span id="aiPct">25</span> %</span></label>
+                            <input type="range" id="r-aiPct" min="5" max="50" step="1" value="25" data-testid="stranded-ai" />
+                        </div>
+                        <div class="field">
+                            <label>Useful facility lifespan assumption <span class="val"><span id="life">12</span> years</span></label>
+                            <input type="range" id="r-life" min="5" max="25" step="1" value="12" data-testid="stranded-life" />
+                        </div>
+                        <div class="readout">
+                            <strong id="o-half">3.1 years</strong>
+                            until effective compute per square foot doubles
+                            <span class="muted">(combined hardware + software gain)</span>.
+                            <hr style="margin:10px 0;border-top:1px dotted var(--rule);" />
+                            <strong id="o-strand">82%</strong>
+                            estimated effective floor-space obsolescence by end of assumed lifespan.
+                            <hr style="margin:10px 0;border-top:1px dotted var(--rule);" />
+                            <span id="o-blight">Risk class: <strong style="display:inline; font-size:14px;">High — Digital Blight Likely</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 10 — COMMUNITY ACTION =========== -->
+            <article class="module" id="m10" data-testid="module-10">
+                <div class="num">Module 10</div>
+                <h2>The Community Action &amp; Civic Engagement Hub</h2>
+                <p class="feature">Feature: A practical toolkit enabling everyday citizens and church members to participate directly in local due diligence.</p>
+                <div class="grid">
+                    <div class="body">
+                        <p><strong>The Town Hall Tracker.</strong> A live calendar showing local planning commission and city commission meetings where zoning text amendments, noise ordinance updates, or data center moratorium extensions are being debated and voted on.</p>
+                        <p><strong>The 60-Second Comment Drafter.</strong> A tool that helps users quickly structure respectful, clear, 1-minute public comments for city commission meetings focusing on sound, water, or electric rate concerns.</p>
+                        <p><strong>Acoustic &amp; Noise Survey Logger.</strong> A portal where neighbors can log localized baseline sound readings and report continuous low-frequency vibrations directly to community organizers to assist with local ordinance planning.</p>
+
+                        <h4 style="margin-top: 22px;">Town Hall Tracker</h4>
+                        <div class="calendar" data-testid="town-hall-calendar">
+                            <div class="row">
+                                <div class="cal-date"><div class="d">04</div><div class="m">Dec</div></div>
+                                <div class="cal-body"><h5>Planning Commission — Regular Session</h5><div class="when">6:00 p.m. · Municipal Building, Council Chambers</div>Includes text amendment first reading: Industrial Overlay (Boones Creek corridor).</div>
+                            </div>
+                            <div class="row">
+                                <div class="cal-date"><div class="d">11</div><div class="m">Dec</div></div>
+                                <div class="cal-body"><h5>City Commission — Regular Meeting</h5><div class="when">7:00 p.m. · Municipal Building</div>Discussion item: Noise Ordinance Review — Industrial Hum (Browns Mill).</div>
+                            </div>
+                            <div class="row">
+                                <div class="cal-date"><div class="d">18</div><div class="m">Dec</div></div>
+                                <div class="cal-body"><h5>Board of Zoning Appeals</h5><div class="when">5:30 p.m. · Municipal Building</div>Continued discussion: South Roan variance request.</div>
+                            </div>
+                            <div class="row">
+                                <div class="cal-date"><div class="d">08</div><div class="m">Jan</div></div>
+                                <div class="cal-body"><h5>City Commission — Work Session</h5><div class="when">5:00 p.m. · Municipal Building</div>Water &amp; Sewer Cost-of-Service Study presentation (Phase 2).</div>
+                            </div>
+                            <div class="row">
+                                <div class="cal-date"><div class="d">22</div><div class="m">Jan</div></div>
+                                <div class="cal-body"><h5>Joint Workshop — Commission &amp; BrightRidge</h5><div class="when">6:00 p.m. · Municipal Building</div>Transmission &amp; large-load interconnection briefing.</div>
+                            </div>
+                        </div>
+                        <p class="muted" style="margin-top: 10px;">Times and rooms confirm with the city clerk before attending. Public comment periods typically open at the start of each meeting.</p>
+                    </div>
+
+                    <div class="tool">
+                        <h4>60-Second Comment Drafter</h4>
+                        <div class="field">
+                            <label>Your name (as you wish to be recorded)</label>
+                            <input type="text" id="c-name" placeholder="Jane Q. Resident" data-testid="comment-name"/>
+                        </div>
+                        <div class="field">
+                            <label>Neighborhood or precinct</label>
+                            <input type="text" id="c-hood" placeholder="e.g., Boones Creek / W. Walnut / Tree Streets" data-testid="comment-hood"/>
+                        </div>
+                        <div class="field">
+                            <label>Primary concern</label>
+                            <select id="c-topic" data-testid="comment-topic">
+                                <option>Sound — continuous nighttime hum</option>
+                                <option>Water — municipal &amp; well-water competition</option>
+                                <option>Electric rates — residential cost-shifting</option>
+                                <option>Air quality — diesel generator emissions</option>
+                                <option>Transparency — non-disclosure agreements</option>
+                                <option>Zoning — buffer &amp; performance standards</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>One personal sentence (optional)</label>
+                            <textarea id="c-personal" placeholder="e.g., I have lived on Cherry Street for thirty-one years…" data-testid="comment-personal"></textarea>
+                        </div>
+                        <div class="field">
+                            <label>The ask</label>
+                            <select id="c-ask" data-testid="comment-ask">
+                                <option>Adopt a six-month moratorium pending independent study.</option>
+                                <option>Require a developer-funded, peer-reviewed acoustic study.</option>
+                                <option>Require a water-availability finding before any zoning vote.</option>
+                                <option>Pass a ratepayer-protection clause in the zoning text.</option>
+                                <option>Disclose all NDAs signed by city staff or officials.</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-testid="generate-comment">Preview comment</button>
+                            <button class="btn outline" data-testid="download-comment">Download (.txt)</button>
+                        </div>
+                        <div class="readout" id="commentPreview" data-testid="comment-preview" style="white-space: pre-wrap; min-height: 60px;">Your generated 1-minute comment will appear here.</div>
+
+                        <h4 style="margin-top: 28px;">Acoustic &amp; Noise Survey Logger</h4>
+                        <div class="field">
+                            <label>Address or cross-streets</label>
+                            <input type="text" id="s-addr" placeholder="e.g., 412 Cherry St / King Springs &amp; Old Gray" data-testid="survey-addr"/>
+                        </div>
+                        <div class="field">
+                            <label>Date &amp; time</label>
+                            <input type="text" id="s-when" placeholder="2025-12-04, 02:18 a.m." data-testid="survey-when"/>
+                        </div>
+                        <div class="field">
+                            <label>Reading <span class="val"><span id="s-dbVal">42</span> dB(A)</span></label>
+                            <input type="range" id="r-sDb" min="25" max="80" step="1" value="42" data-testid="survey-db"/>
+                        </div>
+                        <div class="field">
+                            <label>Felt vibration / low-frequency hum?</label>
+                            <select id="s-vib" data-testid="survey-vib">
+                                <option>No</option>
+                                <option>Faint hum, audible only</option>
+                                <option>Audible hum, walls vibrating</option>
+                                <option>Strong, sleep-disrupting</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Notes (wind, temperature, time since onset)</label>
+                            <textarea id="s-notes" placeholder="e.g., still air, 38°F, hum began ~11 p.m." data-testid="survey-notes"></textarea>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-testid="download-survey">Download survey row (.csv)</button>
+                        </div>
+                        <p class="muted" style="margin-top:8px;">Email completed surveys to your neighborhood organizer or attach to public comment.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- =========== MODULE 11 — SCRIPTURE =========== -->
+            <article class="module" id="m11" data-testid="module-11">
+                <div class="num">Module 11</div>
+                <h2>The Scriptural Reference &amp; Stewardship Guide</h2>
+                <p class="feature">Feature: A theological resource center for pastors, ministries, and faith leaders to frame the data center discussion around biblical stewardship rather than worldly panic.</p>
+                <p style="max-width: 820px;">Four reference studies. Each is intended as a starting point for pastors and ministry leaders preparing devotionals, study guides, or public testimony rooted in scripture rather than spectacle.</p>
+
+                <details class="scripture" data-testid="scripture-1">
+                    <summary>The "Golden Calf" Case Study <span class="verse">· Exodus 32</span></summary>
+                    <div class="content">
+                        <p>A study on the dangers of collective panic and industrial-scale FOMO, reminding communities not to sacrifice their actual, tangible heritage for a gleaming, temporary illusion.</p>
+                        <p>While Moses lingers on the mountain, the people grow afraid that they have been left behind. They take their gold — their inheritance from Egypt, the wealth that was supposed to fund the long journey home — and they melt it down into a calf they can see and touch <em>right now</em>. The calf is not chosen because it is wise. It is chosen because the waiting felt unbearable.</p>
+                        <p>The temptation to a town facing a hyperscale promise is the same. We are told if we do not vote yes <em>this week</em>, the project will go elsewhere. We are told the modern world is on the mountain and we are at the foot of it, and if we do not act we will be left behind. The inheritance — the brick downtown, the quiet streets, the water table, the night-time peace — is offered up to be melted down into something shiny.</p>
+                        <p>Stewardship in this passage is the courage to wait. The calf is always offered in the hour the prophet seems delayed. The leader's task is not to outshine the calf; it is to remind the people that their actual inheritance is already in their hands.</p>
+                    </div>
+                </details>
+
+                <details class="scripture" data-testid="scripture-2">
+                    <summary>The Climax of Job <span class="verse">· Job 38–42</span></summary>
+                    <div class="content">
+                        <p>A guide on human intellectual humility, emphasizing that true wisdom means recognizing the limits of human processing power and respecting the natural world God spoke into motion.</p>
+                        <p>After thirty-seven chapters of human argument — Job and his friends building elaborate cases about suffering, justice, and the order of the cosmos — God finally answers, and the answer is a torrent of questions. <em>Where were you when I laid the foundations of the earth? Who shut up the sea with doors? Have you commanded the morning since your days began? Can you bind the chains of the Pleiades?</em></p>
+                        <p>This is the most important passage in scripture on the question of computational and technological humility. The answer to a world that boasts of "intelligence" measured in megawatts is the same answer Job receives: stand at the rim of the canyon, count the stars you cannot bind, and acknowledge that wisdom is not the same as processing power.</p>
+                        <p>A town that learns to say "we do not yet know enough" is a town in the posture of Job at the end of the book. That is not weakness. That is the beginning of actual understanding.</p>
+                    </div>
+                </details>
+
+                <details class="scripture" data-testid="scripture-3">
+                    <summary>The Ambition of the Quiet Life <span class="verse">· 1 Thessalonians 4:11</span></summary>
+                    <div class="content">
+                        <p>A devotional section celebrating Christian contentment, proving that a city's success is measured by the peace, health, and quiet preservation of its families — not by how many megawatts of electricity it burns to chase a digital gold rush.</p>
+                        <p><em>"Make it your ambition to lead a quiet life, to mind your own business, and to work with your own hands."</em></p>
+                        <p>It is one of the strangest commands in the New Testament: <strong>ambition</strong> directed toward <strong>quietness</strong>. Most ambitions chase louder, taller, faster, bigger. Paul tells the Thessalonians the highest aim is the opposite — a life so well-ordered that it does not require the noise of the city to validate it.</p>
+                        <p>A town measured by quietness is measured by things you cannot put on a glossy brochure: the depth of a child's sleep on a Tuesday night, the sound of a porch conversation at sunset, the steady hum of a refrigerator that does not have to compete with a chiller plant three miles away. These things are economic indicators of the most important kind, because they are the things people quietly leave a town when they lose.</p>
+                        <p>A digital gold rush measured in megawatts is precisely the kind of ambition this verse names and rejects. A city that loves its neighbors will defend their nighttime peace as fiercely as it defends its tax base.</p>
+                    </div>
+                </details>
+
+                <details class="scripture" data-testid="scripture-4">
+                    <summary>The "Love Your Neighbor" Infrastructure Check <span class="verse">· Galatians 6:2</span></summary>
+                    <div class="content">
+                        <p>An economic ethics study showing why communities must force large corporations to bear 100% of their own infrastructure costs, ensuring that fixed-income neighbors and local ministries aren't burdened with higher baseline utility bills.</p>
+                        <p><em>"Bear ye one another's burdens, and so fulfill the law of Christ."</em></p>
+                        <p>Read alongside Galatians 6:5 — <em>"For every man shall bear his own burden"</em> — this becomes one of the most useful passages in all of scripture for thinking about utility rate design. Verse 2 names the moral obligation of the strong to come alongside the weak. Verse 5 names the moral obligation of every actor — including the largest — to carry the weight of their own choices.</p>
+                        <p>When a corporation chooses to build a facility that requires a new substation, new transmission lines, new pumping capacity, and new water-treatment headroom, those are <em>that corporation's</em> burdens to bear. The day the cost is silently spread onto the bills of a widow on social security, a young family stretched thin, or a small congregation paying for the lights in the sanctuary, the order of Galatians 6 is reversed: the weak are made to bear the burden of the strong.</p>
+                        <p>A stewardship-minded city writes its zoning ordinance and its developer agreement in language that keeps verses 2 and 5 in their proper order. That is not anti-business. That is the simplest possible application of "love thy neighbor" to a kilowatt-hour bill.</p>
+                    </div>
+                </details>
+            </article>
+
+            <footer class="foot">
+                <p><strong>The Johnson City Observer · Data Center Impact Tracker</strong></p>
+                <p>Tools are illustrative. Always verify with independent local counsel, professional engineers, and your municipal staff before any official action.</p>
+                <p><a href="/" data-testid="footer-home-link">← Return to the front page</a></p>
+            </footer>
+        </main>
+
+        <script src="/data-center.js"></script>
+        <script>
+            (function () {
+                const el = document.getElementById('today-date');
+                if (!el) return;
+                const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                el.textContent = new Date().toLocaleDateString('en-US', opts);
+            })();
+        </script>
+    </body>
+</html>
