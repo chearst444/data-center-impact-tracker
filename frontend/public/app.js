@@ -1,11 +1,10 @@
 /* ============================================================
-   Data Center Impact Tracker — interactive modules
-   Pure vanilla JS, no build step. Edit defaults inline below.
+   Data Center Impact Tracker — interactive app
+   Single-file vanilla JS, no build step.
    ============================================================ */
 
-// ---------- helpers ----------
 const $ = (id) => document.getElementById(id);
-const fmt = new Intl.NumberFormat('en-US');
+const fmt  = new Intl.NumberFormat('en-US');
 const fmt1 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
 const fmt2 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
 const fmtMoney = (n) =>
@@ -19,153 +18,136 @@ function download(filename, text) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url; a.download = filename;
-  document.body.appendChild(a);
-  a.click();
+  document.body.appendChild(a); a.click();
   setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 0);
 }
 
-// ============ Module 1 — Electrical Burden ============
+/* ============= Module 1 — Electrical Burden ============= */
 (function () {
   const rDc = $('r-dcMW'), rBase = $('r-baseMW'), rRp = $('r-ratepayers');
   if (!rDc) return;
-  function recompute() {
+  function compute() {
     const dc = +rDc.value, base = +rBase.value, rp = +rRp.value;
     $('dcMW').textContent = dc;
     $('baseMW').textContent = base;
     $('ratepayers').textContent = fmt.format(rp);
     const pct = (dc / base) * 100;
-    const infra = dc * 1_250_000;         // ~$1.25M per MW firm capacity
-    const annualPerHouse = (infra / 20) / rp;   // 20-yr recovery
+    const infra = dc * 1_250_000;
+    const monthly = (infra / 20) / rp / 12;
     $('o-loadPct').textContent = fmt1.format(pct) + '%';
     $('o-infra').textContent = fmtMoney(infra);
-    $('o-monthly').textContent = '$' + fmt2.format(annualPerHouse / 12) + ' / month';
+    $('o-monthly').textContent = '$' + fmt2.format(monthly);
   }
-  [rDc, rBase, rRp].forEach((el) => el.addEventListener('input', recompute));
-  recompute();
+  [rDc, rBase, rRp].forEach((el) => el.addEventListener('input', compute));
+  compute();
 })();
 
-// ============ Module 2 — Water ============
+/* ============= Module 2 — Water ============= */
 (function () {
   const rEvap = $('r-evapG'), rSeason = $('r-season');
   if (!rEvap) return;
-  const labelMap = { '1.6': 'Summer peak', '1.0': 'Annual average', '0.7': 'Winter / shoulder' };
-  function recompute() {
+  function compute() {
     const evap = +rEvap.value, season = +rSeason.value;
-    const onsite = evap * season;                 // M gal/day
-    // Indirect: data-center MW load proxy from evap (~0.6 M gal/day per 100 MW peak)
-    // Treat ~0.47 gal/kWh thermoelectric; assume DC load ≈ (onsite / 0.04) MW
-    const dcMW = (onsite / 0.04);                  // rough
-    const indirect = dcMW * 24 * 1000 * 0.47 / 1_000_000; // M gal/day
+    const onsite = evap * season;
+    const dcMW = (onsite / 0.04);
+    const indirect = dcMW * 24 * 1000 * 0.47 / 1_000_000;
     const total = onsite + indirect;
     $('evapG').textContent = fmt1.format(evap);
-    $('seasonLabel').textContent = labelMap[rSeason.value];
     $('o-onsite').textContent = fmt2.format(onsite) + 'M gal/day';
     $('o-indirect').textContent = fmt2.format(indirect) + 'M gal/day';
     $('o-total').textContent = fmt2.format(total) + 'M gal/day';
 
-    // Bars: scale relative to the largest (data center)
-    const house = 300;                  // gal/day
-    const farm = 120_000;
-    const muni = 2_500_000;
-    const dc = total * 1_000_000;
+    const house = 300, farm = 120_000, muni = 2_500_000, dc = total * 1_000_000;
     const max = Math.max(house, farm, muni, dc);
-    const pct = (v) => Math.max(2, (v / max) * 100) + '%';
-    $('b-house').style.width = pct(house);
-    $('b-farm').style.width = pct(farm);
-    $('b-muni').style.width = pct(muni);
-    $('b-dc').style.width = pct(dc);
-    $('v-house').textContent = '300';
-    $('v-farm').textContent = '120K';
-    $('v-muni').textContent = '2.5M';
-    $('v-dc').textContent = fmt2.format(total) + 'M';
+    const w = (v) => Math.max(2, (v / max) * 100) + '%';
+    $('b-house').style.width = w(house);
+    $('b-farm').style.width = w(farm);
+    $('b-muni').style.width = w(muni);
+    $('b-dc').style.width = w(dc);
+    $('v-dc').textContent = fmt2.format(total) + 'M gal';
   }
-  [rEvap, rSeason].forEach((el) => el.addEventListener('input', recompute));
-  recompute();
+  [rEvap, rSeason].forEach((el) => el.addEventListener('input', compute));
+  compute();
 })();
 
-// ============ Module 3 — Sound Propagation ============
+/* ============= Module 3 — Sound ============= */
 (function () {
   const rDb = $('r-dB'), rDist = $('r-dist');
   if (!rDb) return;
-  function recompute() {
+  function compute() {
     const src = +rDb.value, dist = +rDist.value;
     $('dB').textContent = src;
     $('dist').textContent = dist;
-    // Inverse-square + atmospheric absorption (2 dB / 100 ft simple model)
     const refDist = 50;
     let atHome = src - 20 * Math.log10(dist / refDist) - (Math.max(0, dist - refDist) / 100) * 2;
     atHome = Math.max(0, atHome);
-    $('o-atHome').textContent = fmt1.format(atHome) + ' dB(A)';
-
-    let msg;
-    if (atHome >= 55)      msg = 'Well above the 45 dB(A) WHO night-time outdoor guideline. Strong likelihood of sleep disruption, audible hum indoors, and chronic stress responses.';
-    else if (atHome >= 45) msg = 'Above the 45 dB(A) WHO night-time outdoor guideline. Sustained exposure linked to sleep fragmentation, elevated nocturnal cortisol, and increased self-reported anxiety.';
-    else if (atHome >= 35) msg = 'At or below WHO night-time guidance, but low-frequency components (20–120 Hz) may still penetrate walls and be perceived as a felt hum.';
-    else                   msg = 'Below typical night-time guidance. Continuous 24/7 exposure should still be monitored for low-frequency content.';
+    const dbStr = fmt1.format(atHome) + ' dB(A)';
+    $('o-atHome').textContent = dbStr;
+    let msg, cls = 'v';
+    if (atHome >= 55) { msg = 'Well above WHO 45 dB(A) night-time outdoor guideline. Strong likelihood of sleep disruption, audible hum indoors, and chronic stress responses.'; cls = 'v alert'; }
+    else if (atHome >= 45) { msg = 'Above WHO 45 dB(A) night-time outdoor guideline. Sustained exposure linked to sleep fragmentation, elevated nocturnal cortisol, and self-reported anxiety.'; cls = 'v amber'; }
+    else if (atHome >= 35) { msg = 'At or below WHO night-time guidance, but low-frequency components (20–120 Hz) may still penetrate walls and be perceived as a felt hum.'; }
+    else { msg = 'Below typical night-time guidance. Continuous 24/7 exposure should still be monitored for low-frequency content.'; }
+    $('o-atHome').className = cls;
     $('o-health').textContent = msg;
-
-    // Move the home indicator left/right by distance
-    const house = document.getElementById('house');
+    const house = $('house');
     if (house) {
       const px = Math.min(380, 110 + (dist / 1500) * 270);
       house.setAttribute('transform', 'translate(' + px + ',140)');
     }
   }
-  [rDb, rDist].forEach((el) => el.addEventListener('input', recompute));
-  recompute();
+  [rDb, rDist].forEach((el) => el.addEventListener('input', compute));
+  compute();
 })();
 
-// ============ Module 7 — Air Quality ============
+/* ============= Module 7 — Air Quality ============= */
 (function () {
   const rG = $('r-gens'), rD = $('r-dur');
   if (!rG) return;
-  function recompute() {
+  function compute() {
     const g = +rG.value, d = +rD.value;
     $('gens').textContent = g;
     $('dur').textContent = d;
-    // Industrial diesel ~2 gal/min at typical test load (large gen sets)
-    const fuel = g * d * 2;          // gal/week
-    const nox = fuel * 0.064;        // lb NOx (Tier-2 large diesel ~)
-    const pm = fuel * 0.0025;        // lb PM2.5
-    $('o-fuel').textContent = fmt.format(Math.round(fuel)) + ' gal/week';
-    $('o-nox').textContent = '≈ ' + fmt.format(Math.round(nox)) + ' lb NOx / week';
-    $('o-pm').textContent = '≈ ' + fmt.format(Math.round(pm)) + ' lb PM2.5 / week';
+    const fuel = g * d * 2;
+    const nox = fuel * 0.064;
+    const pm = fuel * 0.0025;
+    $('o-fuel').textContent = fmt.format(Math.round(fuel)) + ' gal/wk';
+    $('o-nox').textContent = '≈ ' + fmt.format(Math.round(nox)) + ' lb';
+    $('o-pm').textContent = '≈ ' + fmt.format(Math.round(pm)) + ' lb';
   }
-  [rG, rD].forEach((el) => el.addEventListener('input', recompute));
-  recompute();
+  [rG, rD].forEach((el) => el.addEventListener('input', compute));
+  compute();
 })();
 
-// ============ Module 9 — Stranded Asset ============
+/* ============= Module 9 — Stranded Asset ============= */
 (function () {
   const rE = $('r-effPct'), rA = $('r-aiPct'), rL = $('r-life');
   if (!rE) return;
-  function recompute() {
-    const eff = +rE.value / 100;
-    const ai = +rA.value / 100;
-    const life = +rL.value;
+  function compute() {
+    const eff = +rE.value / 100, ai = +rA.value / 100, life = +rL.value;
     $('effPct').textContent = rE.value;
     $('aiPct').textContent = rA.value;
     $('life').textContent = life;
-    // Combined annual compute-per-sqft growth
-    const combined = (1 + eff) * (1 + ai) - 1;     // e.g., 0.69
+    const combined = (1 + eff) * (1 + ai) - 1;
     const halfYears = Math.log(2) / Math.log(1 + combined);
-    $('o-half').textContent = fmt1.format(halfYears) + ' years';
-    // Effective obsolescence by EOL
-    const eff_capacity = 1 / Math.pow(1 + combined, life);
-    const obsolescence = (1 - eff_capacity) * 100;
+    const obsolescence = (1 - 1 / Math.pow(1 + combined, life)) * 100;
+    $('o-half').textContent = fmt1.format(halfYears) + ' yr';
     $('o-strand').textContent = fmt1.format(obsolescence) + '%';
-    let cls = 'Low — Repurposable';
-    if (obsolescence > 60) cls = 'Moderate — Repurposing Costly';
-    if (obsolescence > 80) cls = 'High — Digital Blight Likely';
-    if (obsolescence > 92) cls = 'Severe — Stranded Concrete';
-    $('o-blight').innerHTML = 'Risk class: <strong style="display:inline; font-size:14px;">' + cls + '</strong>';
+    let cls = 'Low — Repurposable', tag = '';
+    if (obsolescence > 60) cls = 'Moderate — Repurposing costly';
+    if (obsolescence > 80) cls = 'High — Digital blight likely';
+    if (obsolescence > 92) cls = 'Severe — Stranded concrete';
+    $('o-blight').textContent = cls;
+    const tagEl = $('o-blight-tag');
+    if (obsolescence > 80) { tagEl.className = 'tag amber'; }
+    else { tagEl.className = 'tag'; }
   }
-  [rE, rA, rL].forEach((el) => el.addEventListener('input', recompute));
-  recompute();
+  [rE, rA, rL].forEach((el) => el.addEventListener('input', compute));
+  compute();
 })();
 
-// ============ Module 6/8 — RTK + Ordinance downloads ============
-const RTK_TEXT = `THE "RIGHT TO KNOW" CHECKLIST
+/* ============= Downloads — RTK + Ordinance ============= */
+const RTK_TEXT = `RIGHT TO KNOW — CITIZEN DISCLOSURE CHECKLIST
 Before any rezoning, annexation, or special-use permit involving a data center,
 the undersigned hereby requests written, public disclosure of the following:
 
@@ -189,8 +171,8 @@ the undersigned hereby requests written, public disclosure of the following:
 
 Signed: __________________________________________  Date: _______________
 
-Submitted to the City Commission of Johnson City, Tennessee, in the public
-interest, pursuant to the right of citizens to petition their government.
+Submitted in the public interest, pursuant to the right of citizens to
+petition their government.
 `;
 
 const ORDINANCE_TEXT = `MODEL ORDINANCE — HYPERSCALE DATA CENTER LAND USE
@@ -243,33 +225,25 @@ SECTION 5. DISCLOSURE & RATEPAYER PROTECTION
      finding of public necessity.
 
 SECTION 6. JOB CREATION AND CLAW-BACKS
-Any tax abatement or PILOT (payment-in-lieu-of-taxes) agreement granted to
-an HDC facility shall be conditioned on permanent local job creation of not
-fewer than one (1) full-time job per two (2) megawatts of continuous load,
-with claw-back provisions enforceable upon failure to meet such thresholds
-within twenty-four (24) months of commencement of operations.
+Any tax abatement or PILOT agreement granted to an HDC facility shall be
+conditioned on permanent local job creation of not fewer than one (1)
+full-time job per two (2) megawatts of continuous load, with claw-back
+provisions enforceable upon failure to meet such thresholds within
+twenty-four (24) months of commencement of operations.
 
 SECTION 7. SEVERABILITY & EFFECTIVE DATE
 The provisions of this ordinance are severable. This ordinance shall take
-effect upon adoption and shall apply to all applications filed on or after
-the effective date.
-
-ADOPTED this ____ day of __________________, 20____.
+effect upon adoption.
 `;
 
-function bindDownload(testid, filename, text) {
-  document.querySelectorAll('[data-testid="' + testid + '"]').forEach((b) => {
-    b.addEventListener('click', () => download(filename, text));
-  });
-}
-bindDownload('download-rtk', 'right-to-know-checklist.txt', RTK_TEXT);
-bindDownload('download-rtk-2', 'right-to-know-checklist.txt', RTK_TEXT);
-bindDownload('download-ordinance', 'model-hyperscale-data-center-ordinance.txt', ORDINANCE_TEXT);
+document.querySelectorAll('[data-dl="rtk"]').forEach((b) =>
+  b.addEventListener('click', () => download('right-to-know-checklist.txt', RTK_TEXT)));
+document.querySelectorAll('[data-dl="ordinance"]').forEach((b) =>
+  b.addEventListener('click', () => download('model-hyperscale-data-center-ordinance.txt', ORDINANCE_TEXT)));
 
-// ============ Module 10 — Comment drafter & Survey logger ============
+/* ============= Module 10 — Comment + Survey ============= */
 (function () {
   const btnPrev = document.querySelector('[data-testid="generate-comment"]');
-  const btnDl   = document.querySelector('[data-testid="download-comment"]');
   if (!btnPrev) return;
 
   function buildComment() {
@@ -278,19 +252,13 @@ bindDownload('download-ordinance', 'model-hyperscale-data-center-ordinance.txt',
     const topic = $('c-topic').value;
     const personal = $('c-personal').value.trim();
     const ask = $('c-ask').value;
-
-    const today = new Date().toLocaleDateString('en-US', {
-      year: 'numeric', month: 'long', day: 'numeric'
-    });
-
-    let lines = [];
-    lines.push('Mayor and members of the Commission, good evening.');
-    lines.push('');
-    lines.push('My name is ' + name + ' and I live in ' + hood + '. I am here tonight to speak respectfully on ' + topic.toLowerCase().replace(/ —.*/, '') + '.');
-    if (personal) {
-      lines.push('');
-      lines.push(personal);
-    }
+    const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const lines = [
+      'Mayor and members of the Commission, good evening.',
+      '',
+      'My name is ' + name + ' and I live in ' + hood + '. I am here tonight to speak respectfully on ' + topic.toLowerCase().replace(/ —.*/, '') + '.'
+    ];
+    if (personal) { lines.push(''); lines.push(personal); }
     lines.push('');
     lines.push('This is not a matter of being against progress. It is a matter of asking that our progress be measured by what it preserves, not only by what it builds. Continuous noise, water draw, diesel exhaust, and quietly rising utility bills are not abstractions to the families on my street. They are the texture of our daily lives.');
     lines.push('');
@@ -302,18 +270,14 @@ bindDownload('download-ordinance', 'model-hyperscale-data-center-ordinance.txt',
     return lines.join('\n');
   }
 
-  btnPrev.addEventListener('click', () => {
-    $('commentPreview').textContent = buildComment();
-  });
-  btnDl.addEventListener('click', () => {
+  btnPrev.addEventListener('click', () => { $('commentPreview').textContent = buildComment(); });
+  document.querySelector('[data-testid="download-comment"]').addEventListener('click', () => {
     download('public-comment-draft.txt', buildComment());
   });
 
-  // Live readout for survey dB slider
   const rSDb = $('r-sDb');
   rSDb.addEventListener('input', () => { $('s-dbVal').textContent = rSDb.value; });
 
-  // Acoustic survey CSV download
   document.querySelector('[data-testid="download-survey"]').addEventListener('click', () => {
     const row = [
       ($('s-addr').value || '').replace(/"/g, '""'),
@@ -325,4 +289,24 @@ bindDownload('download-ordinance', 'model-hyperscale-data-center-ordinance.txt',
     const csv = 'address,datetime,dBA,low_frequency_vibration,notes\n' + row + '\n';
     download('acoustic-survey-' + Date.now() + '.csv', csv);
   });
+})();
+
+/* ============= Sidebar scrollspy ============= */
+(function () {
+  const links = document.querySelectorAll('.rail a[href^="#"]');
+  const sections = Array.from(links).map((a) => {
+    const id = a.getAttribute('href').slice(1);
+    return { id, el: document.getElementById(id), link: a };
+  }).filter((s) => s.el);
+  function onScroll() {
+    const y = window.scrollY + 120;
+    let active = sections[0];
+    for (const s of sections) {
+      if (s.el.offsetTop <= y) active = s;
+    }
+    links.forEach((l) => l.classList.remove('active'));
+    if (active) active.link.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
