@@ -175,8 +175,14 @@ Submitted in the public interest, pursuant to the right of citizens to
 petition their government.
 `;
 
-const ORDINANCE_TEXT = `MODEL ORDINANCE — HYPERSCALE DATA CENTER LAND USE
+const ORDINANCE_TEXT = `MUNICIPAL ZONING AMENDMENT — CODE TITLE 11 AMENDMENTS
 (Starter template. Adapt with local counsel before adoption.)
+
+Prepared for consideration by the Johnson City Regional Planning Commission
+and Board of Commissioners.
+
+Pursuant to Tennessee Code Annotated (T.C.A.) provisions governing municipal
+land-use controls, noise abatement standards, and industrial district setbacks.
 
 SECTION 1. PURPOSE
 The Commission finds that hyperscale data centers represent a unique land-use
@@ -239,7 +245,7 @@ effect upon adoption.
 document.querySelectorAll('[data-dl="rtk"]').forEach((b) =>
   b.addEventListener('click', () => download('right-to-know-checklist.txt', RTK_TEXT)));
 document.querySelectorAll('[data-dl="ordinance"]').forEach((b) =>
-  b.addEventListener('click', () => download('model-hyperscale-data-center-ordinance.txt', ORDINANCE_TEXT)));
+  b.addEventListener('click', () => download('municipal-zoning-amendment-title-11.txt', ORDINANCE_TEXT)));
 
 /* ============= Module 10 — Comment + Survey ============= */
 (function () {

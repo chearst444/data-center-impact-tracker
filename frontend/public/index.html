@@ -86,21 +86,21 @@
                         <div class="tool" data-testid="tool-electric">
                             <h4>Rate Impact Calculator</h4>
                             <div class="field">
-                                <label>Data center continuous load <span class="val"><span id="dcMW">250</span> MW</span></label>
-                                <input type="range" id="r-dcMW" min="50" max="600" step="10" value="250" data-testid="electric-dc-mw" />
+                                <label>Data center continuous load <span class="val"><span id="dcMW">50</span> MW</span></label>
+                                <input type="range" id="r-dcMW" min="50" max="600" step="10" value="50" data-testid="electric-dc-mw" />
                             </div>
                             <div class="field">
                                 <label>Service-area peak load <span class="val"><span id="baseMW">900</span> MW</span></label>
                                 <input type="range" id="r-baseMW" min="200" max="2000" step="50" value="900" data-testid="electric-base-mw" />
                             </div>
                             <div class="field">
-                                <label>Residential ratepayers <span class="val"><span id="ratepayers">95,000</span></span></label>
-                                <input type="range" id="r-ratepayers" min="10000" max="500000" step="5000" value="95000" data-testid="electric-ratepayers" />
+                                <label>Residential ratepayers <span class="val"><span id="ratepayers">31,000</span></span></label>
+                                <input type="range" id="r-ratepayers" min="10000" max="500000" step="1000" value="31000" data-testid="electric-ratepayers" />
                             </div>
                             <div class="readout" data-testid="electric-readout">
-                                <div class="row"><span class="k">Baseline load increase</span><span class="v" id="o-loadPct">27.8%</span></div>
-                                <div class="row"><span class="k">Estimated new infrastructure</span><span class="v" id="o-infra">$312.5M</span></div>
-                                <div class="row"><span class="k">Illustrative residential redistribution</span><span class="v amber" id="o-monthly">$13.71</span></div>
+                                <div class="row"><span class="k">Baseline load increase</span><span class="v" id="o-loadPct">5.6%</span></div>
+                                <div class="row"><span class="k">Estimated new infrastructure</span><span class="v" id="o-infra">$62.5M</span></div>
+                                <div class="row"><span class="k">Illustrative residential redistribution</span><span class="v amber" id="o-monthly">$8.40</span></div>
                                 <div class="note">Per residential bill, per month, over a 20-year recovery period (industry-typical $1.25M/MW firm capacity assumption).</div>
                             </div>
                         </div>
@@ -127,8 +127,8 @@
                         <div class="tool" data-testid="tool-water">
                             <h4>Daily Water Footprint</h4>
                             <div class="field">
-                                <label>On-site evaporative cooling <span class="val"><span id="evapG">3.2</span>M gal/day</span></label>
-                                <input type="range" id="r-evapG" min="0.2" max="6.0" step="0.1" value="3.2" data-testid="water-evap" />
+                                <label>On-site evaporative cooling <span class="val"><span id="evapG">0.5</span>M gal/day</span></label>
+                                <input type="range" id="r-evapG" min="0.2" max="6.0" step="0.1" value="0.5" data-testid="water-evap" />
                             </div>
                             <div class="field">
                                 <label>Season multiplier</label>
@@ -166,9 +166,9 @@
                     <div class="grid-2">
                         <div>
                             <ul class="facts">
-                                <li><span></span><div><strong>24/7 continuous source</strong>Hundreds of rooftop fans and chillers run through Christmas Eve, 3 a.m., and every birdcall in between.</div></li>
-                                <li><span></span><div><strong>Penetrates standard buffers</strong>Low-frequency content (20–120 Hz) easily clears 200-foot zoning buffers, slips through residential walls, and is felt inside homes.</div></li>
-                                <li><span></span><div><strong>Biological stress response</strong>Sustained continuous hum has been linked to sleep fragmentation, elevated nocturnal cortisol, and increased self-reported anxiety.</div></li>
+                                <li><span></span><div><strong>24/7 continuous source</strong>Hundreds of rooftop fans and chillers run through Christmas Eve, 3 a.m., and every birdcall in between. For facilities tied to regional transmission lines, this creates an unceasing acoustic footprint that standard residential buffers completely fail to mask.</div></li>
+                                <li><span></span><div><strong>Penetrates standard buffers</strong>Low-frequency content (20–120 Hz) easily clears standard 200-foot industrial zoning buffers, slips through residential walls, and is felt inside homes. This specific resonant frequency is the primary target of the JPM Acoustics field studies currently measuring terrain-propagation metrics citywide.</div></li>
+                                <li><span></span><div><strong>Biological stress response</strong>Sustained continuous hum has been linked to sleep fragmentation, elevated nocturnal cortisol, and increased self-reported anxiety. The proximity of sensitive local landmarks like Ashley Academy amplifies the public-health requirement for scientifically defensible setbacks.</div></li>
                             </ul>
                         </div>
                         <div class="tool" data-testid="tool-sound">
@@ -311,15 +311,13 @@
                         <span class="num">Module 06</span>
                         <h2>The "Secret Deals" Transparency &amp; NDA Tracker</h2>
                     </div>
-                    <p class="tagline">"Project Bluebird." "Olive Branch Holdings." The signature move of the hyperscale playbook is the placeholder LLC.</p>
+                    <p class="tagline">Unmasking non-disclosure agreements before they lock out local planning oversight.</p>
                     <p class="feature">Feature: A civic alert tool that flags the use of Non-Disclosure Agreements (NDAs) by city officials.</p>
 
                     <div class="grid-2">
                         <div>
                             <ul class="facts">
-                                <li><span></span><div><strong>Shell companies and NDAs</strong>Developers commonly use placeholder LLCs and strict NDAs to hide project scale, water needs, and power needs from the public until the day of the vote.</div></li>
-                                <li><span></span><div><strong>Compressed comment windows</strong>By the time the project is unveiled, public comment is often measured in days, not months.</div></li>
-                                <li><span></span><div><strong>The remedy is procedural</strong>Disclosure must be required <em>before</em> the rezoning vote, not after.</div></li>
+                                <li><span></span><div><strong>Enforcing local identity</strong>Private infrastructure developers frequently utilize generic holding entities to secure land-use permissions or substation capacity from distributors like BrightRidge before public notifications are triggered. Transparency frameworks protect municipal code by forcing true parental-entity disclosure early in the planning-commission pipeline.</div></li>
                             </ul>
                         </div>
                         <div class="tool">
@@ -353,9 +351,7 @@
                     <div class="grid-2">
                         <div>
                             <ul class="facts">
-                                <li><span></span><div><strong>Industrial diesel fleet</strong>A large campus typically installs 30–250 industrial diesel generators sized like rail cars.</div></li>
-                                <li><span></span><div><strong>Weekly mandatory testing</strong>Test runs of 30–60 minutes per unit produce NOx, PM2.5, VOCs, and CO — often in the early-morning hours.</div></li>
-                                <li><span></span><div><strong>"Emergency engine" loophole</strong>State programs often exempt these units from the limits that apply to normal industrial sources.</div></li>
+                                <li><span></span><div><strong>Industrial emission clusters</strong>Massive arrays of multi-megawatt backup diesel generators require regular load-bank testing, releasing particulate matter into the local airshed. Without modern performance standards, these emissions impact regional valley topography, overlapping with existing particulate filters managed in Washington County.</div></li>
                             </ul>
                         </div>
                         <div class="tool" data-testid="tool-air">
@@ -390,9 +386,7 @@
                     <div class="grid-2">
                         <div>
                             <ul class="facts">
-                                <li><span></span><div><strong>Litigation pressure pattern</strong>Small townships that vote "No" can face multi-million-dollar suits engineered to force settlements.</div></li>
-                                <li><span></span><div><strong>Best defense is procedural</strong>Pre-existing ordinances that treat data centers as a distinct land use are the single most effective shield.</div></li>
-                                <li><span></span><div><strong>Ratepayer-protection clauses</strong>Bind the developer to fund 100% of dedicated infrastructure — closing the silent-subsidy door.</div></li>
+                                <li><span></span><div><strong>Statutory authority framework</strong>By utilizing the temporary I-2 permit moratorium extended to December 3, 2026, Johnson City is insulating its upcoming Title 11 noise ordinance updates from arbitrary-and-capricious developer lawsuits. Grounding the 1,500-foot residential buffer math in JPM Acoustics engineering data legally shields city planners under Tennessee land-use precedents.</div></li>
                             </ul>
 
                             <h4 style="margin-top:18px; font-family:'Manrope',sans-serif; font-size:14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);">Defensive drafting principles</h4>
@@ -427,9 +421,7 @@
                     <div class="grid-2">
                         <div>
                             <ul class="facts">
-                                <li><span></span><div><strong>Hardware efficiency curve</strong>Chip-level compute-per-watt has historically improved 20–50% per year. Compounded, a decade is a different planet.</div></li>
-                                <li><span></span><div><strong>AI model efficiency</strong>Modern model architectures deliver equivalent capability at a fraction of last year's training cost.</div></li>
-                                <li><span></span><div><strong>Stranded concrete risk</strong>An oversized facility can become a ghost-town warehouse — too specialized to repurpose, too expensive to demolish.</div></li>
+                                <li><span></span><div><strong>Grid capacity abandonment</strong>If market volatility causes a digital-asset operator or crypto miner to abandon a facility, specialized transmission infrastructure and heavy substations become stranded on the grid. Under regional public-power frameworks, the long-term amortization costs of these custom BrightRidge and TVA line expansions risk being passed down to the residential rate base.</div></li>
                             </ul>
                         </div>
                         <div class="tool" data-testid="tool-stranded">
@@ -474,35 +466,35 @@
 
                             <div class="cal" data-testid="town-hall-calendar">
                                 <div class="cal-row">
-                                    <div class="cal-date"><div class="d">04</div><div class="m">Dec</div></div>
+                                    <div class="cal-date"><div class="d">Late</div><div class="m">Sum '26</div></div>
                                     <div class="cal-body">
-                                        <h5>Planning Commission — 1st Thursday</h5>
-                                        <div class="when">6:00 p.m. · Municipal &amp; Safety Building</div>
-                                        <p>Text amendment first reading: Industrial Overlay (Boones Creek corridor).</p>
+                                        <h5>JPM Acoustics Technical Report Presentation</h5>
+                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                                        <p>Review of the raw acoustic data and low-frequency terrain mapping gathered from the 10 target citywide tracking sites.</p>
                                     </div>
                                 </div>
                                 <div class="cal-row">
-                                    <div class="cal-date"><div class="d">18</div><div class="m">Dec</div></div>
+                                    <div class="cal-date"><div class="d">Early</div><div class="m">Fall '26</div></div>
                                     <div class="cal-body">
-                                        <h5>City Commission — 3rd Thursday</h5>
-                                        <div class="when">6:00 p.m. · Municipal &amp; Safety Building</div>
-                                        <p>Discussion: Noise ordinance review — continuous industrial hum.</p>
+                                        <h5>Title 11 Noise Ordinance Public Review</h5>
+                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                                        <p>First open floor for public scrutiny and debate regarding the newly drafted text amendments for Johnson City's residential noise limits.</p>
                                     </div>
                                 </div>
                                 <div class="cal-row">
-                                    <div class="cal-date"><div class="d">15</div><div class="m">Jan</div></div>
+                                    <div class="cal-date"><div class="d">Late</div><div class="m">Fall '26</div></div>
                                     <div class="cal-body">
-                                        <h5>Planning Commission — 3rd Thursday</h5>
-                                        <div class="when">6:00 p.m. · Municipal &amp; Safety Building</div>
-                                        <p>Water &amp; Sewer Cost-of-Service Study, Phase 2 presentation.</p>
+                                        <h5>Regional Planning Commission Moratorium Hearing</h5>
+                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                                        <p>Formal presentation of modernized zoning boundaries and special-exception review standards before the December 3 expiration window.</p>
                                     </div>
                                 </div>
                                 <div class="cal-row">
-                                    <div class="cal-date"><div class="d">05</div><div class="m">Feb</div></div>
+                                    <div class="cal-date"><div class="d">Nov</div><div class="m">2026</div></div>
                                     <div class="cal-body">
-                                        <h5>City Commission — 1st Thursday</h5>
-                                        <div class="when">6:00 p.m. · Municipal &amp; Safety Building</div>
-                                        <p>Joint workshop with utility staff: large-load interconnection briefing.</p>
+                                        <h5>Municipal Accountability Review</h5>
+                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                                        <p>Public evaluation of commission zoning actions and long-term infrastructure defense frameworks ahead of the upcoming election cycle.</p>
                                     </div>
                                 </div>
                             </div>
@@ -512,7 +504,7 @@
                             <p class="muted" style="margin-bottom: 12px;">Log baseline sound readings and continuous low-frequency vibration reports. Downloadable CSV rows can be aggregated by neighborhood organizers to support ordinance updates.</p>
                             <div class="field">
                                 <label>Address or cross-streets</label>
-                                <input type="text" id="s-addr" placeholder="412 Cherry St / King Springs &amp; Old Gray" data-testid="survey-addr"/>
+                                <input type="text" id="s-addr" placeholder="e.g., 412 Cherry St / West Walnut Street" data-testid="survey-addr"/>
                             </div>
                             <div class="field">
                                 <label>Date &amp; time</label>
@@ -533,7 +525,7 @@
                             </div>
                             <div class="field">
                                 <label>Notes (wind, temperature, time since onset)</label>
-                                <textarea id="s-notes" placeholder="still air, 38°F, hum began ~11 p.m." data-testid="survey-notes"></textarea>
+                                <textarea id="s-notes" placeholder="e.g., still air, hum began around 11 p.m., resonant vibration felt indoors" data-testid="survey-notes"></textarea>
                             </div>
                             <div class="actions">
                                 <button class="btn" data-testid="download-survey">Download survey row (.csv)</button>
@@ -549,7 +541,7 @@
                             </div>
                             <div class="field">
                                 <label>Neighborhood or precinct</label>
-                                <input type="text" id="c-hood" placeholder="Boones Creek / W. Walnut / Tree Streets" data-testid="comment-hood"/>
+                                <input type="text" id="c-hood" placeholder="Tree Streets / Boones Creek / King Springs" data-testid="comment-hood"/>
                             </div>
                             <div class="field">
                                 <label>Primary concern</label>
