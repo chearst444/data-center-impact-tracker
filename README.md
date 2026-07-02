@@ -77,18 +77,16 @@ Or use any static-file server (`npx serve .`, `caddy file-server`, etc.).
 1. Electrical Burden & Rate Calculator
 2. Water Impact Module
 3. Sound Footprint & Propagation Map
-4. Employment Illusion Analysis
-5. Post-Construction Moratorium Timeline
-6. "Turned Away" Case Studies Archive
-7. "Secret Deals" Transparency & NDA Tracker
-8. Emergency Generator Air Quality Monitor
-9. "Bullying Lawsuit" Legal Defense Repository
-10. "Stranded Asset" / Digital Blight Risk Model
-11. Community Action & Civic Engagement Hub
-12. Siting Logic Matrix
-13. Scriptural Reference & Stewardship Guide
-14. Civic Election Tracker
+4. Employment Illusion
+5. Moratorium Timeline
+6. Turned Away Cases
+7. NDA Transparency
+8. Air Quality
+9. Legal Defense
+10. Stranded Asset
+11. Community Action
+12. Siting Logic
+13. Scriptural Guide
+14. Election Tracker
 
-Calculators are illustrative and use industry-typical figures. Verify with
-independent local counsel, professional engineers, and your municipal staff
-before any official action.
+
