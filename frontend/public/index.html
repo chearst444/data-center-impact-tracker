@@ -110,53 +110,51 @@
                     </div>
                 </section>
 
-                <!-- ===================== MODULE 2 — WATER ===================== -->
-                <section class="module" id="m2" data-testid="module-2">
-                    <div class="module-head">
-                        <span class="num">Module 02</span>
-                        <h2>The Water Impact Module</h2>
-                    </div>
-                    <p class="tagline">Evaporative cooling does not return water to the river. It exhales it into the sky.</p>
-                    <p class="feature">Feature: A water consumption tracker that visualizes on-site and off-site ecosystem strain.</p>
-
-                    <div class="grid-2">
-                        <div>
-                            <ul class="facts">
-                                <li><span></span><div><strong>On-site evaporative cooling</strong>Peak-summer days can evaporate 5+ million gallons — gone, not returned.</div></li>
-                                <li><span></span><div><strong>Indirect upstream footprint</strong>Thermoelectric power plants serving the data center add roughly 0.47 gallons of cooling water per kWh generated.</div></li>
-                                <li><span></span><div><strong>Direct local competition</strong>Municipal withdrawals, residential wells, and agricultural irrigation share the same watershed. A single unmitigated hyperscale data center facility can consume millions of gallons daily for evaporative cooling, directly competing with the Johnson City municipal system, which draws its raw supply from the Watauga River and Unicoi Springs to produce a baseline of potable water for the region.<br/><span style="display:block; margin-top:8px; font-size:12.5px;"><a href="https://www.johnsoncitytn.org/departments/water___sewer_services/index.php" target="_blank" rel="noopener" data-testid="water-jc-link">Johnson City Water &amp; Sewer Services →</a> &nbsp;·&nbsp; <a href="https://www.johnsoncitytn.org/departments/water___sewer_services/treatment_facilities/watauga_wtp.php" target="_blank" rel="noopener" data-testid="water-watauga-link">Watauga Water Treatment Plant profile →</a></span></div></li>
-                            </ul>
-                        </div>
-                        <div class="tool" data-testid="tool-water">
-                            <h4>Daily Water Footprint</h4>
-                            <div class="field">
-                                <label>On-site evaporative cooling <span class="val"><span id="evapG">0.5</span>M gal/day</span></label>
-                                <input type="range" id="r-evapG" min="0.2" max="6.0" step="0.1" value="0.5" data-testid="water-evap" />
-                            </div>
-                            <div class="field">
-                                <label>Season multiplier</label>
-                                <select id="r-season" data-testid="water-season">
-                                    <option value="1.6">Summer peak (×1.6)</option>
-                                    <option value="1.0" selected>Annual average (×1.0)</option>
-                                    <option value="0.7">Winter / shoulder (×0.7)</option>
-                                </select>
-                            </div>
-                            <div class="readout">
-                                <div class="row"><span class="k">On-site evaporative loss</span><span class="v" id="o-onsite">3.20M gal/day</span></div>
-                                <div class="row"><span class="k">Indirect upstream cooling</span><span class="v" id="o-indirect">1.50M gal/day</span></div>
-                                <div class="row"><span class="k">Total community water footprint</span><span class="v amber" id="o-total">4.70M gal/day</span></div>
-                            </div>
-                            <h4 style="margin-top: 16px;">Daily Comparison</h4>
-                            <div class="bars" data-testid="water-bars">
-                                <div class="bar-row"><span class="label">Avg. household</span><div class="bar-track"><div class="bar-fill alt" id="b-house" style="width:1%"></div></div><span class="bar-val">300 gal</span></div>
-                                <div class="bar-row"><span class="label">200-acre farm</span><div class="bar-track"><div class="bar-fill amber" id="b-farm" style="width:3%"></div></div><span class="bar-val">120K gal</span></div>
-                                <div class="bar-row"><span class="label">Small-town municipal</span><div class="bar-track"><div class="bar-fill alt" id="b-muni" style="width:50%"></div></div><span class="bar-val">2.5M gal</span></div>
-                                <div class="bar-row"><span class="label">Data center (total)</span><div class="bar-track"><div class="bar-fill" id="b-dc" style="width:100%"></div></div><span class="bar-val" id="v-dc">4.70M gal</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
+               <!-- ===================== MODULE 02 — WATER ===================== -->
+<section class="module" id="m2" data-testid="module-2">
+    <div class="module-head">
+        <span class="num">Module 02</span>
+        <h2>The Water Impact Module</h2>
+    </div>
+    <p class="tagline">Evaporative cooling does not return water to the river. It exhales it into the sky.</p>
+    <p class="feature">Feature: A water consumption tracker that visualizes on-site and off-site ecosystem strain.</p>
+    <div class="grid-2">
+        <div>
+            <ul class="facts">
+                <li><span></span><div><strong>On-site evaporative cooling</strong>Peak-summer days can evaporate 5+ million gallons — gone, not returned.</div></li>
+                <li><span></span><div><strong>Indirect upstream footprint</strong>Thermoelectric power plants serving the data center add roughly 0.47 gallons of cooling water per kWh generated.</div></li>
+                <li><span></span><div><strong>Direct local competition</strong>Municipal withdrawals, residential wells, and agricultural irrigation share the same watershed. A single unmitigated hyperscale data center facility can consume millions of gallons daily for evaporative cooling, directly competing with the Johnson City municipal system, which draws its raw supply from the Watauga River and Unicoi Springs to produce a baseline of potable water for the region.<br/><span style="display:block; margin-top:8px; font-size:12.5px;"><a href="https://www.johnsoncitytn.org/services/water_sewer_services/index.php" target="_blank" rel="noopener" data-testid="water-jc-link">Water and Sewer Services →</a> &nbsp;·&nbsp; <a href="https://issuu.com/kshoun/docs/2025_water_quality_report_-_johnson_city_water_and?fr=sODkyNzkwNTU2NjE" target="_blank" rel="noopener" data-testid="water-report-link">2025 Water Quality Report →</a></span></div></li>
+            </ul>
+        </div>
+        <div class="tool" data-testid="tool-water">
+            <h4>Daily Water Footprint</h4>
+            <div class="field">
+                <label>On-site evaporative cooling <span class="val"><span id="evapG">0.5</span>M gal/day</span></label>
+                <input type="range" id="r-evapG" min="0.2" max="6.0" step="0.1" value="0.5" data-testid="water-evap" />
+            </div>
+            <div class="field">
+                <label>Season multiplier</label>
+                <select id="r-season" data-testid="water-season">
+                    <option value="1.6">Summer peak (×1.6)</option>
+                    <option value="1.0" selected>Annual average (×1.0)</option>
+                    <option value="0.7">Winter / shoulder (×0.7)</option>
+                </select>
+            </div>
+            <div class="readout">
+                <div class="row"><span class="k">On-site evaporative loss</span><span class="v" id="o-onsite">3.20M gal/day</span></div>
+                <div class="row"><span class="k">Indirect upstream cooling</span><span class="v" id="o-indirect">1.50M gal/day</span></div>
+                <div class="row"><span class="k">Total community water footprint</span><span class="v amber" id="o-total">4.70M gal/day</span></div>
+            </div>
+            <h4 style="margin-top: 16px;">Daily Comparison</h4>
+            <div class="bars" data-testid="water-bars">
+                <div class="bar-row"><span class="label">Avg. household</span><div class="bar-track"><div class="bar-fill alt" id="b-house" style="width:1%"></div></div><span class="bar-val">300 gal</span></div>
+                <div class="bar-row"><span class="label">200-acre farm</span><div class="bar-track"><div class="bar-fill amber" id="b-farm" style="width:3%"></div></div><span class="bar-val">120K gal</span></div>
+                <div class="bar-row"><span class="label">Small-town municipal</span><div class="bar-track"><div class="bar-fill alt" id="b-muni" style="width:50%"></div></div><span class="bar-val">2.5M gal</span></div>
+                <div class="bar-row"><span class="label">Data center (total)</span><div class="bar-track"><div class="bar-fill" id="b-dc" style="width:100%"></div></div><span class="bar-val" id="v-dc">4.70M gal</span></div>
+            </div>
+        </div>
+    </div>
+</section>
                 <!-- ===================== MODULE 3 — SOUND ===================== -->
                 <section class="module" id="m3" data-testid="module-3">
                     <div class="module-head">
