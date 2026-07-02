@@ -494,6 +494,7 @@
 </section>
 
 <!-- ===================== MODULE 11 — COMMUNITY ACTION ===================== -->
+<!-- ===================== MODULE 11 — COMMUNITY ACTION ===================== -->
 <section class="module" id="m11" data-testid="module-11">
     <div class="module-head">
         <span class="num">Module 11</span>
@@ -504,13 +505,116 @@
     <div class="grid-2">
         <div>
             <h4 style="font-family:'Manrope',sans-serif; font-size:16px; margin-bottom:6px;">Town Hall Tracker</h4>
-            <p class="muted" style="margin-bottom: 12px;">The Johnson City Planning Commission and City Commission meet on the <strong>1st and 3rd Thursday of every month at 6:00 p.m.</strong> at the Municipal and Safety Building. Past minutes, agendas, voting records, and live streams are available at <a href="https://johnsoncitytn.org" target="_blank" rel="noopener">johnsoncitytn.org</a>.</p>
+            <p class="muted" style="margin-bottom: 12px;">The Johnson City Planning Commission and City Commission meet on the <strong>1st and 3rd Thursday of every month at 6:00 p.m.</strong> at the Municipal and Safety Building. Past minutes, agendas, voting records, and live streams are available at <a href="https://johnsoncitytn.org" target="_blank" rel="noopener" data-testid="link-jct">johnsoncitytn.org</a>.</p>
+            
+            <div class="cal" data-testid="town-hall-calendar">
+                <div class="cal-row">
+                    <div class="cal-date"><div class="d">Late</div><div class="m">Sum '26</div></div>
+                    <div class="cal-body">
+                        <h5>JPM Acoustics Technical Report Presentation</h5>
+                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                        <p>Review of the raw acoustic data and low-frequency terrain mapping gathered from the 10 target citywide tracking sites.</p>
+                    </div>
+                </div>
+                <div class="cal-row">
+                    <div class="cal-date"><div class="d">Early</div><div class="m">Fall '26</div></div>
+                    <div class="cal-body">
+                        <h5>Title 11 Noise Ordinance Public Review</h5>
+                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                        <p>First open floor for public scrutiny and debate regarding the newly drafted text amendments for Johnson City's residential noise limits.</p>
+                    </div>
+                </div>
+                <div class="cal-row">
+                    <div class="cal-date"><div class="d">Late</div><div class="m">Fall '26</div></div>
+                    <div class="cal-body">
+                        <h5>Regional Planning Commission Moratorium Hearing</h5>
+                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                        <p>Formal presentation of modernized zoning boundaries and special-exception review standards before the December 3 expiration window.</p>
+                    </div>
+                </div>
+                <div class="cal-row">
+                    <div class="cal-date"><div class="d">Nov</div><div class="m">2026</div></div>
+                    <div class="cal-body">
+                        <h5>Municipal Accountability Review</h5>
+                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
+                        <p>Public evaluation of commission zoning actions and long-term infrastructure defense frameworks ahead of the upcoming election cycle.</p>
+                    </div>
+                </div>
+            </div>
             <p class="muted" style="margin-top: 10px;">Confirm room and start time with the city clerk before attending; public comment periods open at the start of each meeting.</p>
+
+            <h4 style="margin-top: 22px; font-family:'Manrope',sans-serif; font-size:16px;">Acoustic &amp; Noise Survey Logger</h4>
+            <p class="muted" style="margin-bottom: 12px;">Log baseline sound readings and continuous low-frequency vibration reports. Downloadable CSV rows can be aggregated by neighborhood organizers to support ordinance updates.</p>
+            <div class="field">
+                <label>Address or cross-streets</label>
+                <input type="text" id="s-addr" placeholder="e.g., 412 Cherry St / West Walnut Street" data-testid="survey-addr"/>
+            </div>
+            <div class="field">
+                <label>Date &amp; time</label>
+                <input type="text" id="s-when" placeholder="2026-12-04, 02:18 a.m." data-testid="survey-when"/>
+            </div>
+            <div class="field">
+                <label>Reading <span class="val"><span id="s-dbVal">42</span> dB(A)</span></label>
+                <input type="range" id="r-sDb" min="25" max="80" step="1" value="42" data-testid="survey-db"/>
+            </div>
+            <div class="field">
+                <label>Felt vibration / low-frequency hum</label>
+                <select id="s-vib" data-testid="survey-vib">
+                    <option>No</option>
+                    <option>Faint hum, audible only</option>
+                    <option>Audible hum, walls vibrating</option>
+                    <option>Strong, sleep-disrupting</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Notes (wind, temperature, time since onset)</label>
+                <textarea id="s-notes" placeholder="e.g., still air, hum began around 11 p.m., resonant vibration felt indoors" data-testid="survey-notes"></textarea>
+            </div>
+            <div class="actions">
+                <button class="btn" data-testid="download-survey">Download survey row (.csv)</button>
+            </div>
         </div>
         <div class="tool">
             <h4>60-Second Comment Drafter</h4>
             <p class="muted" style="margin-bottom: 12px;">A respectful 1-minute public comment, structured for sound, water, or electric-rate concerns.</p>
-            <!-- Add your form fields here if you have them -->
+            <div class="field">
+                <label>Your name (as you wish to be recorded)</label>
+                <input type="text" id="c-name" placeholder="Jane Q. Resident" data-testid="comment-name"/>
+            </div>
+            <div class="field">
+                <label>Neighborhood or precinct</label>
+                <input type="text" id="c-hood" placeholder="Tree Streets / Boones Creek / King Springs" data-testid="comment-hood"/>
+            </div>
+            <div class="field">
+                <label>Primary concern</label>
+                <select id="c-topic" data-testid="comment-topic">
+                    <option>Sound — continuous nighttime hum</option>
+                    <option>Water — municipal &amp; well-water competition</option>
+                    <option>Electric rates — residential cost-shifting</option>
+                    <option>Air quality — diesel generator emissions</option>
+                    <option>Transparency — non-disclosure agreements</option>
+                    <option>Zoning — buffer &amp; performance standards</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>One personal sentence (optional)</label>
+                <textarea id="c-personal" placeholder="I have lived on Cherry Street for thirty-one years…" data-testid="comment-personal"></textarea>
+            </div>
+            <div class="field">
+                <label>The ask</label>
+                <select id="c-ask" data-testid="comment-ask">
+                    <option>Adopt a six-month moratorium pending independent study.</option>
+                    <option>Require a developer-funded, peer-reviewed acoustic study.</option>
+                    <option>Require a water-availability finding before any zoning vote.</option>
+                    <option>Pass a ratepayer-protection clause in the zoning text.</option>
+                    <option>Disclose all NDAs signed by city staff or officials.</option>
+                </select>
+            </div>
+            <div class="actions">
+                <button class="btn" data-testid="generate-comment">Preview comment</button>
+                <button class="btn outline" data-testid="download-comment">Download (.txt)</button>
+            </div>
+            <div class="preview" id="commentPreview" data-testid="comment-preview">Your generated 1-minute public comment will appear here.</div>
         </div>
     </div>
 </section>
