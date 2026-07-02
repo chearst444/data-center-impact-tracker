@@ -10,7 +10,7 @@ This is a **pure static site** — three editable files, no build step, no backe
 
 ```
 frontend/public/
-├── index.html     # The whole single-page app (12 modules)
+├── index.html     # The whole single-page app (14 modules)
 ├── styles.css     # Civic-dashboard stylesheet
 └── app.js         # Calculators, downloads, scrollspy
 ```
@@ -77,15 +77,17 @@ Or use any static-file server (`npx serve .`, `caddy file-server`, etc.).
 1. Electrical Burden & Rate Calculator
 2. Water Impact Module
 3. Sound Footprint & Propagation Map
-4. Post-Construction Timeline & "Unknown Issues" Log
-5. "Turned Away" Case Studies Archive
-6. "Secret Deals" Transparency & NDA Tracker
-7. Emergency Generator Air Quality Monitor
-8. "Bullying Lawsuit" Legal Defense Repository
-9. "Stranded Asset" / Digital Blight Risk Model
-10. Community Action & Civic Engagement Hub
-11. Scriptural Reference & Stewardship Guide
-12. Civic Election Tracker
+4. Employment Illusion Analysis
+5. Post-Construction Moratorium Timeline
+6. "Turned Away" Case Studies Archive
+7. "Secret Deals" Transparency & NDA Tracker
+8. Emergency Generator Air Quality Monitor
+9. "Bullying Lawsuit" Legal Defense Repository
+10. "Stranded Asset" / Digital Blight Risk Model
+11. Community Action & Civic Engagement Hub
+12. Siting Logic Matrix
+13. Scriptural Reference & Stewardship Guide
+14. Civic Election Tracker
 
 Calculators are illustrative and use industry-typical figures. Verify with
 independent local counsel, professional engineers, and your municipal staff
