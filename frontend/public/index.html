@@ -387,358 +387,7 @@
                     </div>
                 </section>
 
-                <!-- ===================== MODULE 8 — AIR QUALITY ===================== -->
-                <section class="module" id="m8" data-testid="module-8">
-                    <div class="module-head">
-                        <span class="num">Module 08</span>
-                        <h2>The Emergency Generator Air Quality Monitor</h2>
-                    </div>
-                    <p class="tagline">Rail-car-sized diesel engines that are tested every single week — and often exempt from local air rules.</p>
-                    <p class="feature">Feature: An environmental impact tracker focusing on backup power systems.</p>
-
-                    <div class="grid-2">
-                        <div>
-                            <ul class="facts">
-                                <li><span></span><div><strong>Industrial emission clusters</strong>Massive arrays of multi-megawatt backup diesel generators require regular load-bank testing, releasing particulate matter into the local airshed. Without modern performance standards, these emissions impact regional valley topography, overlapping with existing particulate filters managed in Washington County.</div></li>
-                            </ul>
-                        </div>
-                        <div class="tool" data-testid="tool-air">
-                            <h4>Weekly Emissions Estimate</h4>
-                            <div class="field">
-                                <label>On-site diesel generators <span class="val"><span id="gens">120</span> units</span></label>
-                                <input type="range" id="r-gens" min="10" max="300" step="5" value="120" data-testid="air-gens" />
-                            </div>
-                            <div class="field">
-                                <label>Weekly test duration per unit <span class="val"><span id="dur">30</span> min</span></label>
-                                <input type="range" id="r-dur" min="15" max="120" step="5" value="30" data-testid="air-dur" />
-                            </div>
-                            <div class="readout">
-                                <div class="row"><span class="k">Diesel fuel burned (routine testing)</span><span class="v" id="o-fuel">7,200 gal/wk</span></div>
-                                <div class="row"><span class="k">NOx</span><span class="v amber" id="o-nox">≈ 461 lb</span></div>
-                                <div class="row"><span class="k">PM2.5</span><span class="v amber" id="o-pm">≈ 18 lb</span></div>
-                                <div class="note">Routine weekly testing only. Emergency run-time emissions are additive and uncapped under most exemptions.</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ===================== MODULE 9 — LEGAL DEFENSE ===================== -->
-                <section class="module" id="m9" data-testid="module-9">
-                    <div class="module-head">
-                        <span class="num">Module 09</span>
-                        <h2>The "Bullying Lawsuit" Legal Defense Repository</h2>
-                    </div>
-                    <p class="tagline">A small board's hands are tied <em>after</em> the zoning matrix is left ambiguous — not before.</p>
-                    <p class="feature">Feature: A legal resource database for small-town boards whose "hands are tied" by corporate litigation.</p>
-
-                    <div class="grid-2">
-                        <div>
-                            <ul class="facts">
-                                <li><span></span><div><strong>Statutory authority framework</strong>By utilizing the temporary I-2 permit moratorium extended to December 3, 2026, Johnson City is insulating its upcoming Title 11 noise ordinance updates from arbitrary-and-capricious developer lawsuits. Grounding the 1,500-foot residential buffer math in JPM Acoustics engineering data legally shields city planners under Tennessee land-use precedents.</div></li>
-                            </ul>
-
-                            <h4 style="margin-top:18px; font-family:'Manrope',sans-serif; font-size:14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);">Defensive drafting principles</h4>
-                            <ul style="margin: 8px 0 0 18px; font-size: 14px; color: var(--ink-soft);">
-                                <li>Define hyperscale data centers as a distinct use — not "general industrial."</li>
-                                <li>Require special-use permits, not by-right approvals.</li>
-                                <li>Adopt water-availability and sound-budget findings as conditions precedent.</li>
-                                <li>Include a ratepayer-protection clause for developer-funded infrastructure.</li>
-                                <li>Bind tax abatement to permanent jobs-to-MW thresholds with claw-backs.</li>
-                            </ul>
-                        </div>
-                        <div class="tool">
-                            <h4>Pro-Bono Style Resources</h4>
-                            <p style="font-size:14px; color: var(--ink-soft);">A starter model ordinance defining "Hyperscale Data Center" as a distinct use, requiring special-use permit, water-availability finding, sound-budget, and ratepayer-protection clause. Adapt with local counsel.</p>
-                            <div class="actions">
-                                <button class="btn" data-dl="ordinance" data-testid="download-ordinance">Download model ordinance (.txt)</button>
-                                <button class="btn outline" data-dl="rtk" data-testid="download-rtk-2">Download RTK checklist (.txt)</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ===================== MODULE 10 — STRANDED ASSET ===================== -->
-                <section class="module" id="m10" data-testid="module-10">
-                    <div class="module-head">
-                        <span class="num">Module 10</span>
-                        <h2>The "Stranded Asset" / Digital Blight Risk Model</h2>
-                    </div>
-                    <p class="tagline">The most expensive day in a data center's life is the day, ten years on, when leaner silicon makes its concrete obsolete.</p>
-                    <p class="feature">Feature: A long-term economic forecasting tool addressing the life expectancy of the facility.</p>
-
-                    <div class="grid-2">
-                        <div>
-                            <ul class="facts">
-                                <li><span></span><div><strong>Grid capacity abandonment</strong>If market volatility causes a digital-asset operator or crypto miner to abandon a facility, specialized transmission infrastructure and heavy substations become stranded on the grid. Under regional public-power frameworks, the long-term amortization costs of these custom BrightRidge and TVA line expansions risk being passed down to the residential rate base.</div></li>
-                            </ul>
-                        </div>
-                        <div class="tool" data-testid="tool-stranded">
-                            <h4>Obsolescence Risk Model</h4>
-                            <div class="field">
-                                <label>Annual chip efficiency improvement <span class="val"><span id="effPct">35</span>%</span></label>
-                                <input type="range" id="r-effPct" min="10" max="60" step="1" value="35" data-testid="stranded-eff" />
-                            </div>
-                            <div class="field">
-                                <label>Annual AI model efficiency gain <span class="val"><span id="aiPct">25</span>%</span></label>
-                                <input type="range" id="r-aiPct" min="5" max="50" step="1" value="25" data-testid="stranded-ai" />
-                            </div>
-                            <div class="field">
-                                <label>Assumed facility lifespan <span class="val"><span id="life">12</span> yr</span></label>
-                                <input type="range" id="r-life" min="5" max="25" step="1" value="12" data-testid="stranded-life" />
-                            </div>
-                            <div class="readout">
-                                <div class="row"><span class="k">Effective compute doubles every</span><span class="v" id="o-half">1.1 yr</span></div>
-                                <div class="row"><span class="k">Effective obsolescence at EOL</span><span class="v amber" id="o-strand">99.9%</span></div>
-                                <div class="row">
-                                    <span class="k">Risk class</span>
-                                    <span class="tag amber" id="o-blight-tag"><span id="o-blight">Severe — Stranded concrete</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ===================== MODULE 11 — COMMUNITY ACTION ===================== -->
-                <section class="module" id="m11" data-testid="module-11">
-                    <div class="module-head">
-                        <span class="num">Module 11</span>
-                        <h2>The Community Action &amp; Civic Engagement Hub</h2>
-                    </div>
-                    <p class="tagline">A practical toolkit for residents, neighborhood organizers, and church members to participate directly in local due diligence.</p>
-                    <p class="feature">Feature: A practical toolkit enabling everyday citizens and church members to participate directly in local due diligence.</p>
-
-                    <div class="grid-2">
-                        <div>
-                            <h4 style="font-family:'Manrope',sans-serif; font-size:16px; margin-bottom:6px;">Town Hall Tracker</h4>
-                            <p class="muted" style="margin-bottom: 12px;">The Johnson City Planning Commission and City Commission meet on the <strong>1st and 3rd Thursday of every month at 6:00 p.m.</strong> at the Municipal and Safety Building. Past minutes, agendas, voting records, and live streams are available at <a href="https://johnsoncitytn.org" target="_blank" rel="noopener" data-testid="link-jct">johnsoncitytn.org</a>.</p>
-
-                            <div class="cal" data-testid="town-hall-calendar">
-                                <div class="cal-row">
-                                    <div class="cal-date"><div class="d">Late</div><div class="m">Sum '26</div></div>
-                                    <div class="cal-body">
-                                        <h5>JPM Acoustics Technical Report Presentation</h5>
-                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
-                                        <p>Review of the raw acoustic data and low-frequency terrain mapping gathered from the 10 target citywide tracking sites.</p>
-                                    </div>
-                                </div>
-                                <div class="cal-row">
-                                    <div class="cal-date"><div class="d">Early</div><div class="m">Fall '26</div></div>
-                                    <div class="cal-body">
-                                        <h5>Title 11 Noise Ordinance Public Review</h5>
-                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
-                                        <p>First open floor for public scrutiny and debate regarding the newly drafted text amendments for Johnson City's residential noise limits.</p>
-                                    </div>
-                                </div>
-                                <div class="cal-row">
-                                    <div class="cal-date"><div class="d">Late</div><div class="m">Fall '26</div></div>
-                                    <div class="cal-body">
-                                        <h5>Regional Planning Commission Moratorium Hearing</h5>
-                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
-                                        <p>Formal presentation of modernized zoning boundaries and special-exception review standards before the December 3 expiration window.</p>
-                                    </div>
-                                </div>
-                                <div class="cal-row">
-                                    <div class="cal-date"><div class="d">Nov</div><div class="m">2026</div></div>
-                                    <div class="cal-body">
-                                        <h5>Municipal Accountability Review</h5>
-                                        <div class="when">Regular session · Municipal &amp; Safety Building</div>
-                                        <p>Public evaluation of commission zoning actions and long-term infrastructure defense frameworks ahead of the upcoming election cycle.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="muted" style="margin-top: 10px;">Confirm room and start time with the city clerk before attending; public comment periods open at the start of each meeting.</p>
-
-                            <h4 style="margin-top: 22px; font-family:'Manrope',sans-serif; font-size:16px;">Acoustic &amp; Noise Survey Logger</h4>
-                            <p class="muted" style="margin-bottom: 12px;">Log baseline sound readings and continuous low-frequency vibration reports. Downloadable CSV rows can be aggregated by neighborhood organizers to support ordinance updates.</p>
-                            <div class="field">
-                                <label>Address or cross-streets</label>
-                                <input type="text" id="s-addr" placeholder="e.g., 412 Cherry St / West Walnut Street" data-testid="survey-addr"/>
-                            </div>
-                            <div class="field">
-                                <label>Date &amp; time</label>
-                                <input type="text" id="s-when" placeholder="2026-12-04, 02:18 a.m." data-testid="survey-when"/>
-                            </div>
-                            <div class="field">
-                                <label>Reading <span class="val"><span id="s-dbVal">42</span> dB(A)</span></label>
-                                <input type="range" id="r-sDb" min="25" max="80" step="1" value="42" data-testid="survey-db"/>
-                            </div>
-                            <div class="field">
-                                <label>Felt vibration / low-frequency hum</label>
-                                <select id="s-vib" data-testid="survey-vib">
-                                    <option>No</option>
-                                    <option>Faint hum, audible only</option>
-                                    <option>Audible hum, walls vibrating</option>
-                                    <option>Strong, sleep-disrupting</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <label>Notes (wind, temperature, time since onset)</label>
-                                <textarea id="s-notes" placeholder="e.g., still air, hum began around 11 p.m., resonant vibration felt indoors" data-testid="survey-notes"></textarea>
-                            </div>
-                            <div class="actions">
-                                <button class="btn" data-testid="download-survey">Download survey row (.csv)</button>
-                            </div>
-                        </div>
-
-                        <div class="tool">
-                            <h4>60-Second Comment Drafter</h4>
-                            <p class="muted" style="margin-bottom: 12px;">A respectful 1-minute public comment, structured for sound, water, or electric-rate concerns.</p>
-                            <div class="field">
-                                <label>Your name (as you wish to be recorded)</label>
-                                <input type="text" id="c-name" placeholder="Jane Q. Resident" data-testid="comment-name"/>
-                            </div>
-                            <div class="field">
-                                <label>Neighborhood or precinct</label>
-                                <input type="text" id="c-hood" placeholder="Tree Streets / Boones Creek / King Springs" data-testid="comment-hood"/>
-                            </div>
-                            <div class="field">
-                                <label>Primary concern</label>
-                                <select id="c-topic" data-testid="comment-topic">
-                                    <option>Sound — continuous nighttime hum</option>
-                                    <option>Water — municipal &amp; well-water competition</option>
-                                    <option>Electric rates — residential cost-shifting</option>
-                                    <option>Air quality — diesel generator emissions</option>
-                                    <option>Transparency — non-disclosure agreements</option>
-                                    <option>Zoning — buffer &amp; performance standards</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <label>One personal sentence (optional)</label>
-                                <textarea id="c-personal" placeholder="I have lived on Cherry Street for thirty-one years…" data-testid="comment-personal"></textarea>
-                            </div>
-                            <div class="field">
-                                <label>The ask</label>
-                                <select id="c-ask" data-testid="comment-ask">
-                                    <option>Adopt a six-month moratorium pending independent study.</option>
-                                    <option>Require a developer-funded, peer-reviewed acoustic study.</option>
-                                    <option>Require a water-availability finding before any zoning vote.</option>
-                                    <option>Pass a ratepayer-protection clause in the zoning text.</option>
-                                    <option>Disclose all NDAs signed by city staff or officials.</option>
-                                </select>
-                            </div>
-                            <div class="actions">
-                                <button class="btn" data-testid="generate-comment">Preview comment</button>
-                                <button class="btn outline" data-testid="download-comment">Download (.txt)</button>
-                            </div>
-                            <div class="preview" id="commentPreview" data-testid="comment-preview">Your generated 1-minute public comment will appear here.</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ===================== MODULE 12 — SITING LOGIC ===================== -->
-                <section class="module" id="m12" data-testid="module-12">
-                    <div class="module-head">
-                        <span class="num">Module 12</span>
-                        <h2>The Siting Logic &amp; Infrastructure Pros</h2>
-                    </div>
-                    <p class="tagline">Understanding the strict physical constraints that draw data centers toward populated areas, alongside the localized municipal benefits they offer.</p>
-                    <p class="feature">Feature: An analytical breakdown of regional network placement demands versus community budgetary pros.</p>
-
-                    <h3 style="font-size: 18px; margin-top: 18px; margin-bottom: 12px; color: var(--ink);">Why They Build Near Communities</h3>
-                    <ul class="facts">
-                        <li><span></span><div><strong>The latency imperative</strong>Data travels through fiber-optic cables at roughly two-thirds the speed of light. To prevent noticeable lag in real-time cloud computing, automated systems, and high-fidelity streaming, facilities must stay geographically close to the regional networks and populations utilizing them.</div></li>
-                        <li><span></span><div><strong>Proximity to heavy power grids</strong>Hyperscale campuses require an immense, uninterrupted supply of electricity. Truly remote, unpopulated areas rarely possess the high-voltage transmission lines and substation architecture capable of delivering hundreds of megawatts of continuous power, forcing developers to build where robust grid infrastructure already exists.</div></li>
-                        <li><span></span><div><strong>Existing fiber infrastructure</strong>Data centers rely heavily on high-density fiber-optic trunk lines that historically run along major transportation corridors and existing metropolitan hubs. Building in isolated regions would necessitate laying thousands of miles of new underground fiber, which is financially prohibitive.</div></li>
-                        <li><span></span><div><strong>Specialized workforce access</strong>While operational data centers run on a skeleton crew, they require constant monitoring by highly specialized systems engineers, network administrators, and infrastructure technicians who need to live within a reasonable commuting distance of the campus.</div></li>
-                    </ul>
-
-                    <h3 style="font-size: 18px; margin-top: 22px; margin-bottom: 12px; color: var(--ink);">The Capital Pros</h3>
-                    <ul class="facts">
-                        <li><span></span><div><strong>Substantial local property tax revenue</strong>Because the physical servers, cooling infrastructure, and specialized power equipment inside a data center are immensely expensive, they generate a massive property tax base. This influx of revenue can significantly boost municipal budgets, helping fund local public schools and emergency services without raising residential property taxes.</div></li>
-                        <li><span></span><div><strong>Immediate construction economic stimulus</strong>The initial phase of a data center project creates a massive, multi-year spike in local construction activity. This injects capital into the local economy through equipment rentals, material sourcing, and localized spending at restaurants, hotels, and service businesses by installation crews.</div></li>
-                        <li><span></span><div><strong>High-value technology infrastructure upgrades</strong>To accommodate a hyperscale user, utility providers and tech firms frequently invest heavily in reinforcing the local power grid and laying high-capacity fiber lines, which can inadvertently improve regional broadband resilience.</div></li>
-                        <li><span></span><div><strong>Philanthropic community partnerships</strong>Major technology companies often establish direct community grant programs, corporate sponsorships, and educational partnerships in the municipalities where they operate, providing funding for local STEM programs and civic non-profits.</div></li>
-                    </ul>
-
-                    <p style="font-size: 13.5px; color: var(--muted); margin-top: 14px; font-style: italic;">
-                        A stewardship-minded review weighs these siting drivers and community benefits against the electric, water, sound, air, and legal exposures documented in Modules 01–10. The right answer for any given town depends on the balance — not the brochure.
-                    </p>
-                </section>
-
-
-                <!-- ===================== MODULE 11 — SCRIPTURE ===================== -->
-                <section class="module" id="m13" data-testid="module-13">
-                    <div class="module-head">
-                        <span class="num">Module 13</span>
-                        <h2>The Scriptural Reference &amp; Stewardship Guide</h2>
-                    </div>
-                    <p class="tagline">A resource center for pastors, ministries, and faith leaders to frame the conversation around biblical stewardship rather than worldly panic.</p>
-                    <p class="feature">Feature: A theological resource center for pastors, ministries, and faith leaders to frame the data center discussion around biblical stewardship rather than worldly panic.</p>
-
-                    <details class="scripture" data-testid="scripture-1">
-                        <summary>The "Golden Calf" Case Study <span class="verse">Exodus 32</span></summary>
-                        <div class="content">
-                            <p>A study on the dangers of collective panic and industrial-scale FOMO, reminding communities not to sacrifice their actual, tangible heritage for a gleaming, temporary illusion.</p>
-                            <p>While Moses lingers on the mountain, the people grow afraid that they have been left behind. They take their gold — their inheritance from Egypt, the wealth that was supposed to fund the long journey home — and they melt it down into a calf they can see and touch <em>right now</em>. The calf is not chosen because it is wise. It is chosen because the waiting felt unbearable.</p>
-                            <p>The temptation to a town facing a hyperscale promise is the same. We are told if we do not vote yes <em>this week</em>, the project will go elsewhere. The inheritance — the quiet streets, the water table, the night-time peace — is offered up to be melted down into something shiny.</p>
-                            <p>Stewardship in this passage is the courage to wait. The calf is always offered in the hour the prophet seems delayed. The leader's task is not to outshine the calf; it is to remind the people their actual inheritance is already in their hands.</p>
-                        </div>
-                    </details>
-
-                    <details class="scripture" data-testid="scripture-2">
-                        <summary>The Climax of Job <span class="verse">Job 38–42</span></summary>
-                        <div class="content">
-                            <p>A guide on human intellectual humility, emphasizing that true wisdom means recognizing the limits of human processing power and respecting the natural world God spoke into motion.</p>
-                            <p>After thirty-seven chapters of human argument, God finally answers — and the answer is a torrent of questions. <em>Where were you when I laid the foundations of the earth? Who shut up the sea with doors? Have you commanded the morning since your days began? Can you bind the chains of the Pleiades?</em></p>
-                            <p>This is the most important passage in scripture on the question of computational and technological humility. The answer to a world that boasts of "intelligence" measured in megawatts is the same answer Job receives: stand at the rim of the canyon, count the stars you cannot bind, and acknowledge that wisdom is not the same as processing power.</p>
-                            <p>A town that learns to say "we do not yet know enough" is a town in the posture of Job at the end of the book. That is not weakness — that is the beginning of actual understanding.</p>
-                        </div>
-                    </details>
-
-                    <details class="scripture" data-testid="scripture-3">
-                        <summary>The Ambition of the Quiet Life <span class="verse">1 Thessalonians 4:11</span></summary>
-                        <div class="content">
-                            <p>A devotional section celebrating Christian contentment, proving that a city's success is measured by the peace, health, and quiet preservation of its families — not by how many megawatts of electricity it burns to chase a digital gold rush.</p>
-                            <p><em>"Make it your ambition to lead a quiet life, to mind your own business, and to work with your own hands."</em></p>
-                            <p>It is one of the strangest commands in the New Testament: <strong>ambition</strong> directed toward <strong>quietness</strong>. Paul tells the Thessalonians the highest aim is the opposite of louder, taller, faster, bigger — a life so well-ordered that it does not require the noise of the city to validate it.</p>
-                            <p>A town measured by quietness is measured by things you cannot put on a brochure: the depth of a child's sleep on a Tuesday night, the sound of a porch conversation at sunset, the steady hum of a refrigerator that does not have to compete with a chiller plant three miles away. A city that loves its neighbors will defend their nighttime peace as fiercely as it defends its tax base.</p>
-                        </div>
-                    </details>
-
-                    <details class="scripture" data-testid="scripture-4">
-                        <summary>The "Love Your Neighbor" Infrastructure Check <span class="verse">Galatians 6:2</span></summary>
-                        <div class="content">
-                            <p>An economic ethics study showing why communities must force large corporations to bear 100% of their own infrastructure costs, ensuring that fixed-income neighbors and local ministries aren't burdened with higher baseline utility bills.</p>
-                            <p><em>"Bear ye one another's burdens, and so fulfill the law of Christ."</em></p>
-                            <p>Read alongside Galatians 6:5 — <em>"For every man shall bear his own burden"</em> — this becomes one of the most useful passages in all of scripture for thinking about utility rate design. Verse 2 names the moral obligation of the strong to come alongside the weak. Verse 5 names the moral obligation of every actor — including the largest — to carry the weight of their own choices.</p>
-                            <p>When a corporation chooses to build a facility that requires a new substation, new transmission lines, and new pumping capacity, those are <em>that corporation's</em> burdens to bear. The day that cost is silently spread onto the bills of a widow on social security or a small congregation paying for the sanctuary lights, the order of Galatians 6 is reversed.</p>
-                            <p>A stewardship-minded city writes its zoning ordinance and its developer agreement in language that keeps verses 2 and 5 in their proper order. That is the simplest possible application of "love thy neighbor" to a kilowatt-hour bill.</p>
-                        </div>
-                    </details>
-                </section>
-
-                <!-- ===================== MODULE 14 — ELECTION TRACKER ===================== -->
-                <section class="module" id="m14" data-testid="module-14">
-                    <div class="module-head">
-                        <span class="num">Module 14</span>
-                        <h2>The Civic Election Tracker</h2>
-                    </div>
-                    <p class="tagline">Stewardship begins at the ballot box. Two elections decide who writes the next decade of Johnson City's zoning code.</p>
-                    <p class="feature">Feature: A dedicated module detailing regional voting timelines to encourage direct democratic participation.</p>
-
-                    <div class="elections-grid" data-testid="elections-grid">
-                        <div class="election" data-testid="election-august">
-                            <span class="tag">August Primary &amp; County General</span>
-                            <h5 style="margin-top: 10px;">Tennessee State Primary &amp; Washington County General</h5>
-                            <span class="when">Election Day · Thursday, August 6, 2026</span>
-                            <ul>
-                                <li><strong>Registration deadline</strong><span>Tuesday, July 7, 2026</span></li>
-                                <li><strong>Early voting</strong><span>Friday, July 17 – Saturday, August 1, 2026</span></li>
-                                <li><strong>Election Day</strong><span>Thursday, August 6, 2026</span></li>
-                            </ul>
-                        </div>
-                        <div class="election" data-testid="election-november">
-                            <span class="tag amber">November General &amp; Municipal</span>
-                            <h5 style="margin-top: 10px;">General Election &amp; Johnson City Municipal</h5>
-                            <span class="when">Election Day · Tuesday, November 3, 2026</span>
-                            <ul>
-                                <li><strong>Registration deadline</strong><span>Monday, October 5, 2026</span></li>
-                                <li><strong>Early voting</strong><span>Wednesday, October 14 – Thursday, October 29, 2026</span></li>
-                                <li><strong>Election Day</strong><span>Tuesday, November 3, 2026</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
+                
                     <div class="lookup" data-testid="lookup">
                         <p><strong>Find your assigned precinct &amp; polling place.</strong> Enter your residential address on the official Tennessee voter portal to confirm registration, locate your polling site, and view your sample ballot.</p>
                         <a class="btn" href="https://GoVoteTN.gov" target="_blank" rel="noopener" data-testid="govote-link">Open GoVoteTN.gov →</a>
@@ -773,16 +422,195 @@
             !(function (t, e) { var o, n, p, r; e.__SV || ((window.posthog = e), (e._i = []), (e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && ((t = t[o[0]]), (e = o[1])), (t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))); }); } ((p = t.createElement("script")).type = "text/javascript"), (p.crossOrigin = "anonymous"), (p.async = !0), (p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"), (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? (u = e[a] = []) : (a = "posthog"), u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return ("posthog" !== a && (e += "." + a), t || (e += " (stub)"), e); }, u.people.toString = function () { return u.toString(1) + ".people (stub)"; }, o = "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++) g(u, o[n]); e._i.push([i, s, a]); }), (e.__SV = 1)); })(document, window.posthog || []);
             posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", { api_host: "https://us.i.posthog.com", person_profiles: "identified_only", session_recording: { recordCrossOriginIframes: true, capturePerformance: false } });
         </script>
+<!-- ===================== MODULE 08 — AIR QUALITY ===================== -->
+<section class="module" id="m8" data-testid="module-8">
+    <div class="module-head">
+        <span class="num">Module 08</span>
+        <h2>The Emergency Generator Air Quality Monitor</h2>
+    </div>
+    <p class="tagline">Rail-car-sized diesel engines that are tested every single week — and often exempt from local air rules.</p>
+    <p class="feature">Feature: An environmental impact tracker focusing on backup power systems.</p>
+    <div class="grid-2">
+        <div>
+            <ul class="facts">
+                <li><span></span><div><strong>Industrial emission clusters</strong>Massive arrays of multi-megawatt backup diesel generators require regular load-bank testing, releasing particulate matter into the local airshed. Without modern performance standards, these emissions impact regional valley topography, overlapping with existing particulate filters managed in Washington County.</div></li>
+            </ul>
+        </div>
+        <div class="tool" data-testid="tool-air">
+            <h4>Weekly Emissions Estimate</h4>
+            <div class="field">
+                <label>On-site diesel generators <span class="val"><span id="gens">120</span> units</span></label>
+                <input type="range" id="r-gens" min="10" max="300" step="5" value="120" data-testid="air-gens" />
+            </div>
+            <div class="field">
+                <label>Weekly test duration per unit <span class="val"><span id="dur">30</span> min</span></label>
+                <input type="range" id="r-dur" min="15" max="120" step="5" value="30" data-testid="air-dur" />
+            </div>
+            <div class="readout">
+                <div class="row"><span class="k">Diesel fuel burned (routine testing)</span><span class="v" id="o-fuel">7,200 gal/wk</span></div>
+                <div class="row"><span class="k">NOx</span><span class="v amber" id="o-nox">≈ 461 lb</span></div>
+                <div class="row"><span class="k">PM2.5</span><span class="v amber" id="o-pm">≈ 18 lb</span></div>
+                <div class="note">Routine weekly testing only. Emergency run-time emissions are additive and uncapped under most exemptions.</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- ===================== FINAL FOOTER ===================== -->
+<!-- ===================== MODULE 09 — LEGAL DEFENSE ===================== -->
+<section class="module" id="m9" data-testid="module-9">
+    <div class="module-head">
+        <span class="num">Module 09</span>
+        <h2>The "Bullying Lawsuit" Legal Defense Repository</h2>
+    </div>
+    <p class="tagline">A small board's hands are tied <em>after</em> the zoning matrix is left ambiguous — not before.</p>
+    <p class="feature">Feature: A legal resource database for small-town boards whose "hands are tied" by corporate litigation.</p>
+    <div class="grid-2">
+        <div>
+            <ul class="facts">
+                <li><span></span><div><strong>Statutory authority framework</strong>By utilizing the temporary I-2 permit moratorium extended to December 3, 2026, Johnson City is insulating its upcoming Title 11 noise ordinance updates from arbitrary-and-capricious developer lawsuits. Grounding the 1,500-foot residential buffer math in JPM Acoustics engineering data legally shields city planners under Tennessee land-use precedents.</div></li>
+            </ul>
+            <h4 style="margin-top:18px; font-family:'Manrope',sans-serif; font-size:14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);">Defensive drafting principles</h4>
+            <ul style="margin: 8px 0 0 18px; font-size: 14px; color: var(--ink-soft);">
+                <li>Define hyperscale data centers as a distinct use — not "general industrial."</li>
+                <li>Require special-use permits, not by-right approvals.</li>
+                <li>Adopt water-availability and sound-budget findings as conditions precedent.</li>
+                <li>Include a ratepayer-protection clause for developer-funded infrastructure.</li>
+                <li>Bind tax abatement to permanent jobs-to-MW thresholds with claw-backs.</li>
+            </ul>
+        </div>
+        <div class="tool">
+            <h4>Pro-Bono Style Resources</h4>
+            <p style="font-size:14px; color: var(--ink-soft);">A starter model ordinance defining "Hyperscale Data Center" as a distinct use, requiring special-use permit, water-availability finding, sound-budget, and ratepayer-protection clause. Adapt with local counsel.</p>
+            <div class="actions">
+                <button class="btn" data-dl="ordinance" data-testid="download-ordinance">Download model ordinance (.txt)</button>
+                <button class="btn outline" data-dl="rtk" data-testid="download-rtk-2">Download RTK checklist (.txt)</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== MODULE 10 — STRANDED ASSET ===================== -->
+<section class="module" id="m10" data-testid="module-10">
+    <div class="module-head">
+        <span class="num">Module 10</span>
+        <h2>The "Stranded Asset" / Digital Blight Risk Model</h2>
+    </div>
+    <p class="tagline">The most expensive day in a data center's life is the day, ten years on, when leaner silicon makes its concrete obsolete.</p>
+    <p class="feature">Feature: A long-term economic forecasting tool addressing the life expectancy of the facility.</p>
+    <div class="grid-2">
+        <div>
+            <ul class="facts">
+                <li><span></span><div><strong>Grid capacity abandonment</strong>If market volatility causes a digital-asset operator or crypto miner to abandon a facility, specialized transmission infrastructure and heavy substations become stranded on the grid. Under regional public-power frameworks, the long-term amortization costs of these custom BrightRidge and TVA line expansions risk being passed down to the residential rate base.</div></li>
+            </ul>
+        </div>
+        <div class="tool" data-testid="tool-stranded">
+            <h4>Obsolescence Risk Model</h4>
+            <div class="field">
+                <label>Annual chip efficiency improvement <span class="val"><span id="effPct">35</span>%</span></label>
+                <input type="range" id="r-effPct" min="10" max="60" step="1" value="35" data-testid="stranded-eff" />
+            </div>
+            <div class="field">
+                <label>Annual AI model efficiency gain <span class="val"><span id="aiPct">25</span>%</span></label>
+                <input type="range" id="r-aiPct" min="5" max="50" step="1" value="25" data-testid="stranded-ai" />
+            </div>
+            <div class="field">
+                <label>Assumed facility lifespan <span class="val"><span id="life">12</span> yr</span></label>
+                <input type="range" id="r-life" min="5" max="25" step="1" value="12" data-testid="stranded-life" />
+            </div>
+            <div class="readout">
+                <div class="row"><span class="k">Effective compute doubles every</span><span class="v" id="o-half">1.1 yr</span></div>
+                <div class="row"><span class="k">Effective obsolescence at EOL</span><span class="v amber" id="o-strand">99.9%</span></div>
+                <div class="row">
+                    <span class="k">Risk class</span>
+                    <span class="tag amber" id="o-blight-tag"><span id="o-blight">Severe — Stranded concrete</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== MODULE 11 — COMMUNITY ACTION ===================== -->
+<section class="module" id="m11" data-testid="module-11">
+    <div class="module-head">
+        <span class="num">Module 11</span>
+        <h2>The Community Action &amp; Civic Engagement Hub</h2>
+    </div>
+    <p class="tagline">A practical toolkit for residents, neighborhood organizers, and church members to participate directly in local due diligence.</p>
+    <p class="feature">Feature: A practical toolkit enabling everyday citizens and church members to participate directly in local due diligence.</p>
+    <div class="grid-2">
+        <div>
+            <h4 style="font-family:'Manrope',sans-serif; font-size:16px; margin-bottom:6px;">Town Hall Tracker</h4>
+            <p class="muted" style="margin-bottom: 12px;">The Johnson City Planning Commission and City Commission meet on the <strong>1st and 3rd Thursday of every month at 6:00 p.m.</strong> at the Municipal and Safety Building. Past minutes, agendas, voting records, and live streams are available at <a href="https://johnsoncitytn.org" target="_blank" rel="noopener" data-testid="link-jct">johnsoncitytn.org</a>.</p>
+            <div class="cal" data-testid="town-hall-calendar">
+                <!-- Your calendar rows go here -->
+            </div>
+            <p class="muted" style="margin-top: 10px;">Confirm room and start time with the city clerk before attending; public comment periods open at the start of each meeting.</p>
+        </div>
+        <div class="tool">
+            <!-- Your Acoustic Survey Logger and 60-Second Comment Drafter go here -->
+        </div>
+    </div>
+</section>
+
+<!-- ===================== MODULE 12 — SITING LOGIC ===================== -->
+<section class="module" id="m12" data-testid="module-12">
+    <div class="module-head">
+        <span class="num">Module 12</span>
+        <h2>The Siting Logic &amp; Infrastructure Pros</h2>
+    </div>
+    <p class="tagline">Understanding the strict physical constraints that draw data centers toward populated areas, alongside the localized municipal benefits they offer.</p>
+    <p class="feature">Feature: An analytical breakdown of regional network placement demands versus community budgetary pros.</p>
+    <h3 style="font-size: 18px; margin-top: 18px; margin-bottom: 12px; color: var(--ink);">Why They Build Near Communities</h3>
+    <ul class="facts">
+        <li><span></span><div><strong>The latency imperative</strong>Data travels through fiber-optic cables at roughly two-thirds the speed of light...</div></li>
+        <li><span></span><div><strong>Proximity to heavy power grids</strong>Hyperscale campuses require an immense, uninterrupted supply of electricity...</div></li>
+        <li><span></span><div><strong>Existing fiber infrastructure</strong>Data centers rely heavily on high-density fiber-optic trunk lines...</div></li>
+        <li><span></span><div><strong>Specialized workforce access</strong>While operational data centers run on a skeleton crew...</div></li>
+    </ul>
+    <h3 style="font-size: 18px; margin-top: 22px; margin-bottom: 12px; color: var(--ink);">The Capital Pros</h3>
+    <ul class="facts">
+        <li><span></span><div><strong>Substantial local property tax revenue</strong>Because the physical servers, cooling infrastructure, and specialized power equipment inside a data center are immensely expensive...</div></li>
+        <li><span></span><div><strong>Immediate construction economic stimulus</strong>The initial phase of a data center project creates a massive, multi-year spike...</div></li>
+        <li><span></span><div><strong>High-value technology infrastructure upgrades</strong>To accommodate a hyperscale user, utility providers and tech firms...</div></li>
+        <li><span></span><div><strong>Philanthropic community partnerships</strong>Major technology companies often establish direct community grant programs...</div></li>
+    </ul>
+    <p style="font-size: 13.5px; color: var(--muted); margin-top: 14px; font-style: italic;">
+        A stewardship-minded review weighs these siting drivers and community benefits against the electric, water, sound, air, and legal exposures documented in Modules 01–10. The right answer for any given town depends on the balance — not the brochure.
+    </p>
+</section>
+
+<!-- ===================== MODULE 13 — SCRIPTURAL ===================== -->
+<section class="module" id="m13" data-testid="module-13">
+    <div class="module-head">
+        <span class="num">Module 13</span>
+        <h2>The Scriptural Reference &amp; Stewardship Guide</h2>
+    </div>
+    <p class="tagline">A resource center for pastors, ministries, and faith leaders to frame the conversation around biblical stewardship rather than worldly panic.</p>
+    <p class="feature">Feature: A theological resource center for pastors, ministries, and faith leaders to frame the data center discussion around biblical stewardship rather than worldly panic.</p>
+    
+    <!-- Your <details> or <div> sections for Golden Calf, Job, etc. go here -->
+</section>
+
+<!-- ===================== MODULE 14 — ELECTION TRACKER ===================== -->
+<section class="module" id="m14" data-testid="module-14">
+    <div class="module-head">
+        <span class="num">Module 14</span>
+        <h2>The Civic Election Tracker</h2>
+    </div>
+    <p class="tagline">Stewardship begins at the ballot box. Two elections decide who writes the next decade of Johnson City's zoning code.</p>
+    <p class="feature">Feature: A dedicated module detailing regional voting timelines to encourage direct democratic participation.</p>
+    <!-- Your election grid content goes here -->
+</section>
+
+<!-- ===================== FINAL FOOTER ===================== -->
 <footer style="padding: 60px 20px 40px; text-align: center; border-top: 1px solid var(--border); margin-top: 80px; background: var(--surface-1);">
     <p><strong>Data Center Impact Tracker &amp; Community Blueprint</strong></p>
     <p style="max-width: 700px; margin: 20px auto; color: var(--ink-soft); font-size: 15px;">
         Calculators are illustrative and use industry-typical figures. Verify with independent local counsel, professional engineers, and municipal staff before official action.
     </p>
     <p>
-        <a href="https://johnsoncitytn.org" target="_blank" rel="noopener" style="margin: 0 12px;">johnsoncitytn.org</a> · 
-        <a href="https://GoVoteTN.gov" target="_blank" rel="noopener" style="margin: 0 12px;">GoVoteTN.gov</a>
+        <a href="https://johnsoncitytn.org" target="_blank" rel="noopener">johnsoncitytn.org</a> · 
+        <a href="https://GoVoteTN.gov" target="_blank" rel="noopener">GoVoteTN.gov</a>
     </p>
 </footer>
     </body>
