@@ -128,21 +128,60 @@
         </div>
         <div class="tool" data-testid="tool-water">
             <h4>Daily Water Footprint</h4>
-            <div class="readout" style="margin-top: 12px;">
-                <div class="row"><span class="k">On-site evaporative loss</span><span class="v">3.20M gal/day (summer peak)</span></div>
-                <div class="row"><span class="k">Indirect upstream cooling</span><span class="v">1.50M gal/day</span></div>
-                <div class="row"><span class="k">Total community water footprint</span><span class="v amber">4.70M gal/day</span></div>
+            <div class="field">
+                <label>On-site evaporative cooling <span class="val"><span id="evapG">0.5</span>M gal/day</span></label>
+                <input type="range" id="r-evapG" min="0.2" max="6.0" step="0.1" value="0.5" data-testid="water-evap" />
+            </div>
+            <div class="field">
+                <label>Season multiplier</label>
+                <select id="r-season" data-testid="water-season">
+                    <option value="1.6">Summer peak (×1.6)</option>
+                    <option value="1.0" selected>Annual average (×1.0)</option>
+                    <option value="0.7">Winter / shoulder (×0.7)</option>
+                </select>
+            </div>
+            <div class="readout">
+                <div class="row"><span class="k">On-site evaporative loss</span><span class="v" id="o-onsite">3.20M gal/day</span></div>
+                <div class="row"><span class="k">Indirect upstream cooling</span><span class="v" id="o-indirect">1.50M gal/day</span></div>
+                <div class="row"><span class="k">Total community water footprint</span><span class="v amber" id="o-total">4.70M gal/day</span></div>
             </div>
             <h4 style="margin-top: 16px;">Daily Comparison</h4>
             <div class="bars" data-testid="water-bars">
-                <div class="bar-row"><span class="label">Avg. household</span><div class="bar-track"><div class="bar-fill alt" style="width:1%"></div></div><span class="bar-val">300 gal</span></div>
-                <div class="bar-row"><span class="label">200-acre farm</span><div class="bar-track"><div class="bar-fill amber" style="width:3%"></div></div><span class="bar-val">120K gal</span></div>
-                <div class="bar-row"><span class="label">Small-town municipal</span><div class="bar-track"><div class="bar-fill alt" style="width:50%"></div></div><span class="bar-val">2.5M gal</span></div>
-                <div class="bar-row"><span class="label">Data center (total)</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">4.70M gal</span></div>
+                <div class="bar-row"><span class="label">Avg. household</span><div class="bar-track"><div class="bar-fill alt" id="b-house" style="width:1%"></div></div><span class="bar-val">300 gal</span></div>
+                <div class="bar-row"><span class="label">200-acre farm</span><div class="bar-track"><div class="bar-fill amber" id="b-farm" style="width:3%"></div></div><span class="bar-val">120K gal</span></div>
+                <div class="bar-row"><span class="label">Small-town municipal</span><div class="bar-track"><div class="bar-fill alt" id="b-muni" style="width:50%"></div></div><span class="bar-val">2.5M gal</span></div>
+                <div class="bar-row"><span class="label">Data center (total)</span><div class="bar-track"><div class="bar-fill" id="b-dc" style="width:100%"></div></div><span class="bar-val" id="v-dc">4.70M gal</span></div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    // Water Calculator JS
+    document.addEventListener('DOMContentLoaded', function() {
+        const evapSlider = document.getElementById('r-evapG');
+        const seasonSelect = document.getElementById('r-season');
+        
+        function updateWater() {
+            if (!evapSlider) return;
+            const evap = parseFloat(evapSlider.value) || 0.5;
+            const season = parseFloat(seasonSelect ? seasonSelect.value : 1.0);
+            const onsite = (evap * season).toFixed(2);
+            const indirect = (evap * 3).toFixed(2);
+            const total = (parseFloat(onsite) + parseFloat(indirect)).toFixed(2);
+            
+            document.getElementById('o-onsite').textContent = onsite + 'M gal/day';
+            document.getElementById('o-indirect').textContent = indirect + 'M gal/day';
+            document.getElementById('o-total').textContent = total + 'M gal/day';
+            document.getElementById('v-dc').textContent = total + 'M gal';
+        }
+        
+        if (evapSlider) evapSlider.addEventListener('input', updateWater);
+        if (seasonSelect) seasonSelect.addEventListener('change', updateWater);
+        
+        updateWater();
+    });
+</script>
                 <!-- ===================== MODULE 3 — SOUND ===================== -->
                 <section class="module" id="m3" data-testid="module-3">
                     <div class="module-head">
